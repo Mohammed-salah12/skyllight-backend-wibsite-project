@@ -14,7 +14,5 @@ class Service extends Model
     }
 
 
-    public function Service_descriptions(){
-        return $this->hasMany(Service_description::class);
-    }
+    
 }

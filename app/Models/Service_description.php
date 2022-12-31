@@ -9,7 +9,5 @@ class Service_description extends Model
 {
     use HasFactory;
 
-    public function service() {
-        return $this->belongsTo(Service::class);
-    }
+   
 }
