@@ -12,3 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
+=======
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::view('admin', 'cms.parent');
+>>>>>>> 6eced2d56463f3d7ecde3ae6640e93cfd90e55ea
