@@ -1,6 +1,14 @@
-@extends("CMSA-Panel.parent")
-@section("title","title")
-@section("styles")
+
+@extends('cms.parent')
+
+@section('title' , 'شركاء النجاح')
+
+@section('main_title' , 'عرض شركاء النجاح')
+
+@section('sub_title' , 'عرض شركاء النجاح')
+
+
+@section('styles')
 
 @endsection
 
