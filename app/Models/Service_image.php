@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Service_image extends Model
 {
     use HasFactory;
-    public function service() {
-        return $this->belongsTo(Service::class);
+    public function service_description() {
+        return $this->belongsTo(Service_description::class);
     }
 }

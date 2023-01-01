@@ -16,8 +16,8 @@ class CreateServiceImagesTable extends Migration
         Schema::create('service_images', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->foreignId('service_id');
-            $table->foreign('service_id')->on('services')->references('id')->cascadeOnDelete();
+            $table->foreignId('serviceDescription_id');
+            $table->foreign('serviceDescription_id')->on('service_descriptions')->references('id')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -9,5 +9,8 @@ class Service_description extends Model
 {
     use HasFactory;
 
-   
+    public function service_images(){
+        return $this->hasMany(Service_image::class);
+    }
+
 }

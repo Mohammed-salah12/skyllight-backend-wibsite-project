@@ -9,10 +9,7 @@ class Service extends Model
 {
     use HasFactory;
 
-    public function Service_images(){
-        return $this->hasMany(Service_image::class);
-    }
-
-
     
+
+
 }
