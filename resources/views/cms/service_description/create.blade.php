@@ -2,9 +2,9 @@
 
 @section('title' , 'الخدمة')
 
-@section('main_title' , 'إنشاء الخدمة')
+@section('page title' , 'إنشاء الخدمة')
 
-@section('sub_title' , 'إنشاء الخدمة')
+@section('active title' , 'إنشاء الخدمة')
 
 
 @section('styles')
@@ -17,7 +17,7 @@
 <section class="container-fluid">
 <div class="card card-primary">
     <div class="card-header">
-      <h3 class="card-title">إنشاء خدمة</h3>
+      <h3 class="text-left">إنشاء خدمة</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->

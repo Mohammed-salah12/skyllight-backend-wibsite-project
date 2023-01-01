@@ -2,9 +2,9 @@
 
 @section('title' , 'صور الخدمة')
 
-@section('main_title' , 'عرض صور الخدمة')
+@section('page title' , 'عرض صور الخدمة')
 
-@section('sub_title' , 'عرض صور الخدمة')
+@section('active title' , 'عرض صور الخدمة')
 
 
 @section('styles')
@@ -24,15 +24,9 @@
                         {{-- <h3 class="card-title">Index Data Of Service Images</h3> --}}
                         <a href="{{ route('service_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a>
                         <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right"
-                                    placeholder="Search">
 
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
+
+                              
                             </div>
                         </div>
                     </div>
@@ -43,7 +37,6 @@
                                 <tr>
                                     <th>رقم المعرف</th>
                                     <th>صورة الخدمة</th>
-                                    <th>اسم الخدمة</th>
                                     <th>الإعدادات</th>
                                 </tr>
                             </thead>
@@ -57,15 +50,12 @@
                                              src="{{ asset('storage/images/service_image/'.$service_image->image) }}"
                                              width="60" height="60" alt="User_Image">
                                     </td>
-                                    <td><span class="badge badge-success">{{ $service_image->service_description->name }}</span></td>
                                     <td>
                                     <div class="btn group">
                                           <a href="{{ route('service_images.edit' , $service_image->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-                                          <button type="button" class="btn btn-info" onclick="performDestroy({{ $service_image->id }} , this)">
-                                            <i class="fas fa-trash"></i>
-                                          </button>
+
                                           </div>
                                       </td>
 

@@ -1,10 +1,10 @@
 @extends('cms.parent')
 
-@section('title' , 'خدمة')
+@section('title' , 'الرسالة')
 
-@section('page title' , 'عرض الخدمة')
+@section('page title' , 'عرض الرسائل')
 
-@section('active title' , 'عرض الخدمة')
+@section('active title' , 'عرض الرسائل')
 
 
 @section('styles')
@@ -21,10 +21,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-left">Index Data Of Service</h3>
+                        <h3 class="text-left">عرض الرسائل</h3>
 
 
-                        <a href="{{ route('service_descriptions.create') }}" type="button" class="btn btn-info">إضافة خدمة جديدة</a>
+                        <a href="{{ route('messages.create') }}" type="button" class="btn btn-info">أضف رسالة جديدة</a>
 
                     </div>
                     <!-- /.card-header -->
@@ -39,15 +39,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($service_descriptions as $service_description)
+                                @foreach($messages as $message)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $service_description->id }}</td>
-                                    <td>{{ $service_description->name }}</td>
-                                    <td>{{ $service_description->description  }}</td>
+                                    <td>{{ $message->id }}</td>
+                                    <td>{{ $message->name }}</td>
+                                    <td>{{ $message->phone }}</td>
+                                    <td>{{ $message->email }}</td>
+                                    <td>{{ $message->message  }}</td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('service_descriptions.edit' , $service_description->id ) }}" type="button" class="btn btn-info">
+                                          <a href="{{ route('messages.edit' , $message->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
 
@@ -64,7 +66,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{ $service_descriptions->links() }}
+                {{ $messages->links() }}
             </div>
         </div>
     </div>
@@ -75,7 +77,7 @@
 @section('scripts')
 <script>
   function performDestroy(id , reference){
-    let url = "/cms/admin/service_descriptions/"+id;
+    let url = "/cms/admin/messages/"+id;
     confirmDestroy(url, reference);
   }
 

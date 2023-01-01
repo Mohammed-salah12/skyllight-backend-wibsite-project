@@ -14,17 +14,7 @@ class Service_descriptionController extends Controller
      */
     public function index(Request $request)
     {
-        $service_descriptions = Service_description::withCount('service_images')->orderBy('id' ,'desc');
-
-
-        if ($request->get('name')) {
-            $service_descriptions = Service_description::where('name', 'like', '%' . $request->name . '%');
-        }
-        if ($request->get('description')) {
-            $service_descriptions = Service_description::where('description', 'like', '%' . $request->code . '%');
-        }
-
-        $service_descriptions = $service_descriptions->paginate(5);
+        $service_descriptions = Service_description::orderBy('id' ,'desc')->paginate(5);
 
         return response()->view('cms.service_description.index' , compact('service_descriptions'));
     }

@@ -2,9 +2,9 @@
 
 @section('title' , 'الخدمة')
 
-@section('main_title' , 'تعديل الخدمة')
+@section('page title' , 'تعديل الخدمة')
 
-@section('sub_title' , 'عدل الخدمة')
+@section('active title' , 'عدل الخدمة')
 
 
 @section('styles')
@@ -17,7 +17,7 @@
 <section class="container-fluid">
 <div class="card card-primary">
     <div class="card-header">
-      <h3 class="card-title">تعديل الخدمة</h3>
+      <h3 class="">تعديل الخدمة</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
@@ -30,7 +30,7 @@
         </div>
         <div class="form-group">
           <label for="description">الوصف</label>
-          <input type="number" class="form-control" id="description"
+          <input type="text" class="form-control" id="description"
           value="{{ $service_descriptions->description }}"  name="description" placeholder="أدخل الوصف">
         </div>
       </div>

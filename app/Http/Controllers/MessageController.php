@@ -2,31 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $services = Service::orderBy('id' ,'desc');
+        $messages = Message::orderBy('id' ,'desc')->paginate(5);
 
-
-        if ($request->get('title')) {
-            $services = Service::where('name', 'like', '%' . $request->title . '%');
-        }
-
-
-        $services = $services->paginate(5);
-
-        return response()->view('cms.service.index' , compact('services'));
-
-
+        return response()->view('cms.message.index' , compact('messages'));
     }
 
     /**
@@ -36,7 +26,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return response()->view('cms.service.create');
+        return response()->view('cms.message.create');
+
     }
 
     /**
@@ -48,14 +39,18 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $validator = Validator($request->all() , [
-            'title' => 'required|string|min:3|max:50',
+            'name' => 'required|string|min:3|max:50',
+
           ]);
 
           if(! $validator->fails()){
-              $services = new Service();
-              $services->title = $request->get('title');
+              $messages = new Message();
+              $messages->name = $request->get('name');
+              $messages->phone = $request->get('phone');
+              $messages->email = $request->get('email');
+              $messages->message = $request->get('message');
 
-              $isSaved = $services->save();
+              $isSaved = $messages->save();
               if($isSaved){
                   return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
               }else {
@@ -64,6 +59,7 @@ class ServiceController extends Controller
           }else{
               return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
           }
+
     }
 
     /**
@@ -85,8 +81,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $services = Service::findOrFail($id);
-        return response()->view('cms.service.edit' , compact('services'));
+        $messages = Message::findOrFail($id);
+        return response()->view('cms.message.edit' , compact('messages'));
     }
 
     /**
@@ -99,15 +95,19 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator($request->all() , [
-            'title' => 'required|string|min:3|max:50',
+            'name' => 'required|string|min:3|max:50',
+
           ]);
 
           if(! $validator->fails()){
-              $services =  Service::findOrFail($id);
-              $services->title = $request->get('title');
+              $messages =  Message::findOrFail($id);;
+              $messages->name = $request->get('name');
+              $messages->phone = $request->get('phone');
+              $messages->email = $request->get('email');
+              $messages->message = $request->get('message');
 
-              $isUpdated = $services->save();
-              return['redirect' => route ('services.index')];
+              $isUpdated = $messages->save();
+              return['redirect' => route ('messages.index')];
               if($isUpdated){
                   return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
               }else {
@@ -126,7 +126,8 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $services = Service::destroy($id);
+        $messages = Message::destroy($id);
         return response()->json(['icon'=>'success' , 'title'=>"Deleted is successfully"],200);
+
     }
 }

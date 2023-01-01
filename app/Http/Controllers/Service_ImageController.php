@@ -15,7 +15,7 @@ class Service_ImageController extends Controller
      */
     public function index()
     {
-        $service_images = Service_image::with('service_description')->orderBy('id' , 'desc')->simplePaginate(5);
+        $service_images = Service_image::orderBy('id' , 'desc')->simplePaginate(5);
         return response()->view('cms.service_image.index', compact('service_images'));
     }
 
@@ -57,7 +57,6 @@ class Service_ImageController extends Controller
                 }
 
               $service_images->image = $request->get('image');
-              $service_images->serviceDescription_id = $request->get('serviceDescription_id');
 
               $isSaved = $service_images->save();
               if($isSaved){
@@ -92,7 +91,7 @@ class Service_ImageController extends Controller
     {
         $service_descriptions = Service_description::all();
         $service_images = Service_image::findOrFail($id);
-        return response()->view('cms.city.edit' , compact('service_descriptions' , 'service_images'));
+        return response()->view('cms.service_image.edit' , compact('service_descriptions' , 'service_images'));
     }
 
     /**
@@ -123,7 +122,6 @@ class Service_ImageController extends Controller
                 }
 
               $service_images->image = $request->get('image');
-              $service_images->serviceDescription_id = $request->get('serviceDescription_id');
 
               $isUpdated = $service_images->save();
               return ['redirect' => route('service_images.index')];
