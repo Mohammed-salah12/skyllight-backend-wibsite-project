@@ -189,7 +189,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="{{ route('services.index') }}" class="nav-link">
+                    <a href="{{ route('service_descriptions.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
                       <p>عرض خدماتنا</p>
                     </a>
