@@ -10,13 +10,13 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
     Route::prefix('cms/admin/')->group(function(){
         Route::view('' , 'cms.parent');
         Route::view('temp' , 'cms.temp');
@@ -30,3 +30,6 @@ Route::get('/', function () {
     Route::post('update-service_descriptions/{id}' , [Service_descriptionController::class , 'update'])->name('update-service_descriptions');
 
     });
+=======
+Route::view('admin', 'cms.parent');
+>>>>>>> 25fa9eed0f5ce4080184676585bb1f2c9b6dab79
