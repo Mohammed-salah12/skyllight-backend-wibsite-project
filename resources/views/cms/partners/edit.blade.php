@@ -27,7 +27,7 @@
       <div class="card-body">
         <div class="form-group">
           <label for="title"> ادخل وصف شركاء النجاح الجديد</label>
-          <input type="text" class="form-control" id="title" value="{{ $partners->title }}" name="title" placeholder="أدخل العنوان">
+          <textarea class="form-control" name="title" id="title" cols="30" rows="10" >{{ $partners->title }}</textarea>
         </div>
 
       </div>

@@ -1,19 +1,18 @@
-
 @extends('cms.parent')
 
-@section('title' , 'شركاء النجاح')
+@section('title' , 'الصفحة الرئيسية')
 
-@section('main_title' , 'عرض شركاء النجاح')
+@section('main_title' , 'عرض الصفحة الرئيسية')
 
-@section('sub_title' , 'عرض شركاء النجاح')
+@section('sub_title' , 'عرض محتوى الصفحة الرئيسية')
 
 
 @section('styles')
 
 @endsection
 
-@section('page title', 'شركاء النجاح')
-@section('active title', 'عرض صفحة شركاء النجاح')
+@section('page title', 'الصفحة الرئيسية')
+@section('active title', 'عرض محتوى الصفحة الرئيسية')
 
 @section('content')
 <section class="content">
@@ -28,18 +27,25 @@
                             <thead >
                                 <tr>
                                     <th>رقم المعرف</th>
-                                    <th>وصف صفحة شركاء النجاح</th>
+                                    <th>العنوان الاساسي</th>
+                                    <th>العنوان الفرعي</th>
+                                    <th>فيديو الخلفية</th>
                                     <th>تعديل</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($partners as $partner)
+                                @foreach($mains as $main)
                                 <tr>
-                                    <td>{{ $partner->id }}</td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $partner->title }}</textarea></td>
+                                    <td>{{ $main->id }}</td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $main->main_title }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $main->sub_title }}</textarea></td>
+                                    <td>
+                                        <video width="60" height="60" src="{{ asset('storage/videos/mains_video/'.$main->video) }}"></video>
+
+                                    </td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('partners.edit' , $partner->id ) }}" type="button" class="btn btn-info">
+                                          <a href="{{ route('mains.edit' , $main->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
                                           </div>
@@ -55,7 +61,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{-- {{ $partners->links() }} --}}
+                {{-- {{ $mains->links() }} --}}
             </div>
         </div>
     </div>

@@ -1,19 +1,18 @@
-
 @extends('cms.parent')
 
-@section('title' , 'شركاء النجاح')
+@section('title' , 'من نحن')
 
-@section('main_title' , 'عرض شركاء النجاح')
+@section('main_title' , 'عرض من نحن')
 
-@section('sub_title' , 'عرض شركاء النجاح')
+@section('sub_title' , 'عرض محتوى من نحن')
 
 
 @section('styles')
 
 @endsection
 
-@section('page title', 'شركاء النجاح')
-@section('active title', 'عرض صفحة شركاء النجاح')
+@section('page title', 'من نحن')
+@section('active title', 'عرض محتوى من نحن')
 
 @section('content')
 <section class="content">
@@ -28,18 +27,20 @@
                             <thead >
                                 <tr>
                                     <th>رقم المعرف</th>
-                                    <th>وصف صفحة شركاء النجاح</th>
+                                    <th>وصف صفحة من نحن</th>
+                                    <th>متخصصون في</th>
                                     <th>تعديل</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($partners as $partner)
+                                @foreach($abouts as $about)
                                 <tr>
-                                    <td>{{ $partner->id }}</td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $partner->title }}</textarea></td>
+                                    <td>{{ $about->id }}</td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $about->title }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $about->expert_description }}</textarea></td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('partners.edit' , $partner->id ) }}" type="button" class="btn btn-info">
+                                          <a href="{{ route('abouts.edit' , $about->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
                                           </div>
@@ -55,7 +56,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{-- {{ $partners->links() }} --}}
+                {{-- {{ $abouts->links() }} --}}
             </div>
         </div>
     </div>

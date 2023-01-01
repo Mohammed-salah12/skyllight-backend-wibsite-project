@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\GallreryController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\Service_descriptionController;
 use App\Http\Controllers\Service_ImageController;
@@ -37,4 +42,16 @@ Route::get('/', function () {
 
         Route::resource('partners' , PartnerController::class);
         Route::post('update-partners/{id}' , [PartnerController::class , 'update'])->name('update-partners');
+
+        Route::resource('contacts' , ContactController::class);
+        Route::post('update-contacts/{id}' , [ContactController::class , 'update'])->name('update-contacts');
+
+        Route::resource('galleries' , GalleryController::class);
+        Route::post('update-galleries/{id}' , [GalleryController::class , 'update'])->name('update-galleries');
+
+        Route::resource('abouts' , AboutController::class);
+        Route::post('update-abouts/{id}' , [AboutController::class , 'update'])->name('update-abouts');
+
+        Route::resource('mains' , MainController::class);
+        Route::post('update-mains/{id}' , [MainController::class , 'update'])->name('update-mains');
     });

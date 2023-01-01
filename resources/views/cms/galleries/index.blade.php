@@ -1,19 +1,19 @@
 
 @extends('cms.parent')
 
-@section('title' , 'شركاء النجاح')
+@section('title' , 'معرض الاعمال')
 
-@section('main_title' , 'عرض شركاء النجاح')
+@section('main_title' , 'عرض معرض الاعمال')
 
-@section('sub_title' , 'عرض شركاء النجاح')
+@section('sub_title' , 'عرض معرض الاعمال')
 
 
 @section('styles')
 
 @endsection
 
-@section('page title', 'شركاء النجاح')
-@section('active title', 'عرض صفحة شركاء النجاح')
+@section('page title', 'معرض الاعمال')
+@section('active title', 'عرض معرض الاعمال')
 
 @section('content')
 <section class="content">
@@ -25,21 +25,22 @@
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">
-                            <thead >
+                            <thead>
                                 <tr>
                                     <th>رقم المعرف</th>
-                                    <th>وصف صفحة شركاء النجاح</th>
+                                    <th>وصف صفحة معرض الاعمال</th>
                                     <th>تعديل</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($partners as $partner)
+                                @foreach($galleries as $gallery)
+                                {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $partner->id }}</td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $partner->title }}</textarea></td>
+                                    <td>{{ $gallery->id }}</td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $gallery->title }}</textarea></td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('partners.edit' , $partner->id ) }}" type="button" class="btn btn-info">
+                                          <a href="{{ route('galleries.edit' , $gallery->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
                                           </div>
@@ -55,7 +56,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{-- {{ $partners->links() }} --}}
+                {{-- {{ $galleries->links() }} --}}
             </div>
         </div>
     </div>

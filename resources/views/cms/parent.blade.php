@@ -151,7 +151,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('mains.index') }}" class="nav-link">
                     <i class="fas fa-edit"></i>
                     <p>عرض الصفحة الرئيسية</p>
                   </a>
@@ -170,7 +170,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('abouts.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
                       <p>عرض من نحن</p>
                     </a>
@@ -189,7 +189,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('services.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
                       <p>عرض خدماتنا</p>
                     </a>
@@ -208,7 +208,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('galleries.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
                       <p>عرض معرض الاعمال</p>
                     </a>
@@ -247,7 +247,7 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('contacts.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
                       <p>عرض تواصل معنا</p>
                     </a>
