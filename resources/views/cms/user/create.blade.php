@@ -70,8 +70,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="button" onclick="performStore()" class="btn btn-primary">Store</button>
-                    <a href="{{ route('users.index') }}" type="button" class="btn btn-info">Return Back</a>
+                    <button type="button" onclick="performStore()" class="btn btn-primary">حفظ</button>
+                    <a href="{{ route('users.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
                 </div>
         </form>
         <!-- form end -->

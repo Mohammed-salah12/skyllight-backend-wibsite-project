@@ -47,15 +47,10 @@ class PartnerImageController extends Controller
             if (request()->hasFile('image')) {
 
               $image = $request->file('image');
-
               $imageName = time() . 'image.' . $image->getClientOriginalExtension();
-
               $image->move('storage/images/partners_image', $imageName);
-
               $partners_images->image = $imageName;
               }
-
-            $partners_images->image = $request->get('image');
 
             $isSaved = $partners_images->save();
             if($isSaved){
@@ -119,7 +114,6 @@ class PartnerImageController extends Controller
               $partners_images->image = $imageName;
               }
 
-            $partners_images->image = $request->get('image');
 
             $isUpdated = $partners_images->save();
             return ['redirect' => route('partners_images.index')];

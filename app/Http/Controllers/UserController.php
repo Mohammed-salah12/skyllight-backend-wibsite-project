@@ -40,8 +40,8 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $validator = Validator($request->all() , [
-
-          ]);
+             'username' => 'unique:users'
+          ] );
 
           if(! $validator->fails()){
               $users = new User();
@@ -55,8 +55,8 @@ class UserController extends Controller
 
                     $users->image = $imageName;
                     }
-              $users->name = $request->get('first_name');
-              $users->name = $request->get('last_name');
+              $users->first_name = $request->get('first_name');
+              $users->last_name = $request->get('last_name');
               $users->mobile = $request->get('mobile');
               $users->username = $request->get('username');
               $users->password = Hash::make($request->get('password'));
@@ -69,7 +69,7 @@ class UserController extends Controller
                   return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
               }
           }else{
-              return response()->json(['icon'=>'error' , 'title' => $validator->getUserBag()->first()],400);
+              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
           }
 
     }
@@ -107,7 +107,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator($request->all() , [
-
+            'username' => 'unique:users'
           ]);
 
           if(! $validator->fails()){
@@ -122,8 +122,8 @@ class UserController extends Controller
 
                 $users->image = $imageName;
                 }
-          $users->name = $request->get('first_name');
-          $users->name = $request->get('last_name');
+          $users->first_name = $request->get('first_name');
+          $users->last_name = $request->get('last_name');
           $users->mobile = $request->get('mobile');
           $users->username = $request->get('username');
           $users->password = Hash::make($request->get('password'));

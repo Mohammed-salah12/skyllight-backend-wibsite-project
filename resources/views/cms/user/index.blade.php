@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="">عرض بيانات الأدمن</h3>
-                        <a href="{{ route('users.create') }}" type="button" class="btn btn-info">Add New user</a>
+                        <a href="{{ route('users.create') }}" type="button" class="btn btn-info">إضافة أدمن جديد</a>
 
                     </div>
                     <!-- /.card-header -->
@@ -30,12 +30,12 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>Full Name</th>
-                                    <th>User Name</th>
-                                    <th>Mobile</th>
-                                    <th>Setting</th>
+                                    <th>رقم المعرف</th>
+                                    <th>الصورة</th>
+                                    <th>الاسم</th>
+                                    <th>اسم المستخدم</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>الإعدادات</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,7 +57,7 @@
                                           <a href="{{ route('users.edit' , $user->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-                                         
+
                                           </div>
                                       </td>
 

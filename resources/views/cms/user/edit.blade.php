@@ -71,8 +71,8 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="button" onclick="performUpdate({{ $users->id }})" class="btn btn-primary">Update</button>
-                    <a href="{{ route('users.index') }}" type="button" class="btn btn-info">Return Back</a>
+                    <button type="button" onclick="performUpdate({{ $users->id }})" class="btn btn-primary">تعديل</button>
+                    <a href="{{ route('users.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
                 </div>
         </form>
         <!-- form end -->
