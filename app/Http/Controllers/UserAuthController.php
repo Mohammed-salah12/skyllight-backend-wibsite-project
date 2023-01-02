@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserAuthController extends Controller
 {
@@ -13,20 +14,20 @@ class UserAuthController extends Controller
     public function login(Request $request){
 
         $validator = Validator($request->all() ,[
-            'email' => 'required|email' ,
+            'username' => 'required|string' ,
             'password' => 'required|string',
         ]);
 
         $credintials =[
-            'email' => $request->get('email'),
+            'username' => $request->get('username'),
             'password' => $request->get('password'),
         ] ;
         if(! $validator->fails()){
             if(Auth::guard($request->get('guard'))->attempt($credintials)){
-                return response()->json(['icon' => 'success' , 'title' =>'Login is Succesfully' ] , 200);
+                return response()->json(['icon' => 'success' , 'title' =>'تمت عملية تسجيل الدخول' ] , 200);
             }
             else {
-                return response()->json(['icon' => 'error' , 'title' =>'Login is Failed' ] , 400);
+                return response()->json(['icon' => 'error' , 'title' =>'فشلت عملية تسجيل الدخول' ] , 400);
 
             }
         }

@@ -21,11 +21,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="cms/index2.html"><b>موقع أضواء السماء</b></a>
+    <a href="#"><b>موقع أضواء السماء</b></a>
   </div>
   <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
+  <div class="card rounded" >
+    <div class="card-body login-card-body py-5" style="border-radius:7px;">
       <p class="login-box-msg">تسجيل الدخول لبدء جلستك</p>
 
       <form action="cms/index3.html" method="post">
@@ -40,7 +40,7 @@
 
                 <div class="col-md-12">
 
-                  <div class="d-flex justify-content-between mb-3">
+                  {{-- <div class="d-flex justify-content-between mb-3">
 
                     <div class="icheck-primary">
 
@@ -51,7 +51,7 @@
 
                       </div>
 
-                  </div>
+                  </div> --}}
 
                   <button type="button" onclick="login()" class="btn btn-primary btn-block">تسجيل الدخول</button>
 
@@ -70,12 +70,10 @@
       </div> --}}
       <!-- /.social-auth-links -->
 
-      <p class="mb-1 text-center mt-1">
+      <p class="mb-1 text-center mt-3">
         <a href="forgot-password.html">نسيت كلمة المرور</a>
       </p>
-      <p class="mb-0 text-center">
-        <a href="register.html" class="text-center">تسجيل كعضو جديد</a>
-      </p>
+
     </div>
     <!-- /.login-card-body -->
   </div>
@@ -102,7 +100,7 @@ function login() {
     axios.post('/cms/user/login', {
       username: document.getElementById('username').value,
       password: document.getElementById('password').value,
-      guard: guard
+    //   guard: guard
     })
         .then(function (response) {
         window.location.href = '/cms/admin'
