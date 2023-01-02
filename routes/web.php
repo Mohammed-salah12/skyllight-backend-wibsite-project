@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GallreryController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\Service_descriptionController;
 use App\Http\Controllers\Service_ImageController;

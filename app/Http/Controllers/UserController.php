@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service_description;
-use App\Models\Service_image;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
-class Service_ImageController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class Service_ImageController extends Controller
      */
     public function index()
     {
-        $service_images = Service_image::orderBy('id' , 'desc')->simplePaginate(5);
-        return response()->view('cms.service_image.index', compact('service_images'));
+        $users = User::orderBy('id' ,'desc')->paginate(5);
+
+        return response()->view('cms.user.index' , compact('users'));
     }
 
     /**
@@ -26,8 +27,8 @@ class Service_ImageController extends Controller
      */
     public function create()
     {
-        $service_descriptions = Service_description::all();
-        return response()->view('cms.service_image.create', compact('service_descriptions'));
+        return response()->view('cms.user.create');
+
     }
 
     /**
@@ -43,30 +44,34 @@ class Service_ImageController extends Controller
           ]);
 
           if(! $validator->fails()){
-
-              $service_images = new Service_image();
+              $users = new User();
               if (request()->hasFile('image')) {
 
-                $image = $request->file('image');
+                    $image = $request->file('image');
 
-                $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+                    $imageName = time() . 'image.' . $image->getClientOriginalExtension();
 
-                $image->move('storage/images/service_image', $imageName);
+                    $image->move('storage/images/user', $imageName);
 
-                $service_images->image = $imageName;
-                }
+                    $users->image = $imageName;
+                    }
+              $users->name = $request->get('first_name');
+              $users->name = $request->get('last_name');
+              $users->mobile = $request->get('mobile');
+              $users->username = $request->get('username');
+              $users->password = Hash::make($request->get('password'));
 
 
-              $isSaved = $service_images->save();
+              $isSaved = $users->save();
               if($isSaved){
-
                   return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
               }else {
                   return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
               }
           }else{
-              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+              return response()->json(['icon'=>'error' , 'title' => $validator->getUserBag()->first()],400);
           }
+
     }
 
     /**
@@ -88,9 +93,8 @@ class Service_ImageController extends Controller
      */
     public function edit($id)
     {
-        $service_descriptions = Service_description::all();
-        $service_images = Service_image::findOrFail($id);
-        return response()->view('cms.service_image.edit' , compact('service_descriptions' , 'service_images'));
+        $users = User::findOrFail($id);
+        return response()->view('cms.user.edit' , compact('users'));
     }
 
     /**
@@ -107,42 +111,46 @@ class Service_ImageController extends Controller
           ]);
 
           if(! $validator->fails()){
-
-              $service_images =  Service_image::findOrFail($id);
-              if (request()->hasFile('image')) {
+            $users =  User::findOrFail($id);
+            if (request()->hasFile('image')) {
 
                 $image = $request->file('image');
 
                 $imageName = time() . 'image.' . $image->getClientOriginalExtension();
 
-                $image->move('storage/images/service_image', $imageName);
+                $image->move('storage/images/user', $imageName);
 
-                $service_images->image = $imageName;
+                $users->image = $imageName;
                 }
+          $users->name = $request->get('first_name');
+          $users->name = $request->get('last_name');
+          $users->mobile = $request->get('mobile');
+          $users->username = $request->get('username');
+          $users->password = Hash::make($request->get('password'));
 
-
-              $isUpdated = $service_images->save();
-              return ['redirect' => route('service_images.index')];
+              $isUpdated = $users->save();
+              return['redirect' => route ('users.index')];
               if($isUpdated){
-
                   return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
               }else {
                   return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
               }
           }else{
-              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+              return response()->json(['icon'=>'error' , 'title' => $validator->getUserBag()->first()],400);
           }
-    }
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $service_images = Service_image::destroy($id);
-        return response()->json(['icon'=>'success' , 'title'=>"Deleted is successfully"],200);
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy($id)
+        {
+            $users = User::destroy($id);
+            return response()->json(['icon'=>'success' , 'title'=>"Deleted is successfully"],200);
+
+        }
+
     }
-}
