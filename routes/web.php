@@ -72,8 +72,7 @@ Route::get('/', function () {
 
 
 
+  Route::prefix('cms/user/')->group(function (){
+    Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');                     Route::post('login' , [UserAuthController::class , 'login']);
 
-
-    Route::prefix('cms/admin/')->group(function (){
-        Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');
-  });
+});
