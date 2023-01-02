@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use App\Models\Main;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class MainController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('cms.mains.create');
     }
 
     /**
@@ -36,7 +37,36 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator($request->all() , [
+            'main_title' => 'required|string',
+            'sub_title' => 'required|string',
+        ]);
+
+          if(! $validator->fails()){
+              $mains = new Main();
+              if (request()->hasFile('videos')) {
+
+                $videos = $request->file('videos');
+
+                $videoName = time() . 'videos.' . $videos->getClientOriginalExtension();
+
+                $videos->move('storage/images/videos', $videoName);
+
+                $mains->videos = $videoName;
+                }
+                $mains->main_title = $request->get('main_title');
+                $mains->sub_title = $request->get('sub_title');
+                // $mains->videos = $request->get('videos');
+
+              $isSaved = $mains->save();
+              if($isSaved){
+                  return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
+              }else {
+                  return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
+              }
+          }else{
+              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+          }
     }
 
     /**
@@ -72,30 +102,38 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator($request->all() , [
-            // 'main_title' => 'required|string',
-            // 'sub_title' => 'required|string',
-            // 'video' => 'required|string'
+            'main_title' => 'required|string',
+            'sub_title' => 'required|string',
         ]);
 
-        if (! $validator->fails()){
+        if(! $validator->fails()){
 
-            $mains = Main::findOrFail($id);
-            $mains->main_title = $request->get('main_title');
-            $mains->sub_title = $request->get('sub_title');
-            $mains->video = $request->get('video');
+            $mains =  Main::findOrFail($id);
+            if (request()->hasFile('videos')) {
+
+                $videos = $request->file('videos');
+
+                $videoName = time() . 'videos.' . $videos->getClientOriginalExtension();
+
+                $videos->move('storage/images/videos', $videoName);
+
+                $mains->videos = $videoName;
+                }
+                $mains->main_title = $request->get('main_title');
+                $mains->sub_title = $request->get('sub_title');
+                // $mains->videos = $request->get('videos');
+
 
             $isUpdated = $mains->save();
             return ['redirect' => route('mains.index')];
             if($isUpdated){
-                return response()->json(['icon' => 'success' , 'title' => 'نجح التعديل'] , 200);
-            }
-            else{
-                return response()->json(['icon' => 'error' , 'title' => ' فشل التعديل'] , 400);
 
+                return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
+            }else {
+                return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
             }
-        }
-        else{
-            return response()->json(['icon' => 'error' , 'title' => $validator->getMessageBag()->first()] , 400);
+        }else{
+            return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
         }
     }
 

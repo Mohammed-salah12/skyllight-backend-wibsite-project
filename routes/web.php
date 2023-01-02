@@ -68,4 +68,14 @@ Route::get('/', function () {
 
     Route::resource('users' , UserController::class);
     Route::post('update-users/{id}' , [UserController::class , 'update'])->name('users');
+<<<<<<< HEAD
     });
+=======
+
+
+    });
+
+    Route::prefix('cms/admin/')->group(function (){
+        Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');
+             });
+>>>>>>> fb15d6e3bbe5700efc85da6933f961254a803845

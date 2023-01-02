@@ -30,8 +30,8 @@
           <textarea class="form-control" name="main_title" id="main_title" cols="30" rows="10" >{{ $mains->main_title }}</textarea>
           <label for="sub_title"> ادخل العنوان الفرعي الجديد</label>
           <textarea class="form-control" name="sub_title" id="sub_title" cols="30" rows="10" >{{ $mains->sub_title }}</textarea>
-          <label for="video">ارفع الفيديو الجديد</label>
-            <input type="file" class="form-control" id="video" name="video" placeholder="">
+          <label for="videos">ارفع الفيديو الجديد</label>
+            <input type="file" class="form-control" id="videos" name="videos" placeholder="">
         </div>
 
       </div>
@@ -53,7 +53,7 @@
       let formData = new FormData();
       formData.append('main_title',document.getElementById('main_title').value);
       formData.append('sub_title',document.getElementById('sub_title').value);
-      formData.append('video', document.getElementById('video').files[0]);
+      formData.append('videos', document.getElementById('videos').files[0]);
       storeRoute('/cms/admin/update-mains/'+id , formData);
     }
 

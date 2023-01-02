@@ -1,18 +1,18 @@
 @extends('cms.parent')
 
-@section('title' , 'شركاء النجاح')
+@section('title' , 'معرض الاعمال')
 
-@section('main_title' ,  'شركاء النجاح')
+@section('main_title' ,  'معرض الاعمال')
 
-@section('sub_title' , 'انشاء شركاء النجاح')
+@section('sub_title' , 'انشاء معرض الاعمال')
 
 
 @section('styles')
 
 @endsection
 
-@section('page title', 'انشاء شركاء النجاح')
-@section('active title', 'انشاء وصف شركاء النجاح')
+@section('page title', 'انشاء معرض الاعمال')
+@section('active title', 'انشاء وصف معرض الاعمال')
 
 
 
@@ -20,14 +20,14 @@
 <section class="container-fluid">
 <div class="card card-primary">
     <div class="card-header">
-      <h3 class="text-left">إنشاء وصف شركاء النجاح</h3>
+      <h3 class="text-left">إنشاء وصف معرض الاعمال</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
     <form>
       <div class="card-body">
         <div class="form-group">
-            <label for="title"> ادخل وصف شركاء النجاح</label>
+            <label for="title"> ادخل وصف معرض الاعمال</label>
             <textarea class="form-control" name="title" id="title" cols="30" rows="10" ></textarea>
           </div>
       </div>
@@ -35,7 +35,7 @@
 
       <div class="card-footer">
         <button type="button" onclick="performStore()" class="btn btn-primary">حفظ</button>
-        <a href="{{ route('partners.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
+        <a href="{{ route('galleries.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
       </div>
     </form>
   </div>
@@ -49,7 +49,7 @@
     let formData = new FormData();
     formData.append('title',document.getElementById('title').value);
 
-    store('/cms/admin/partners' , formData)
+    store('/cms/admin/galleries' , formData)
   }
 
 </script>

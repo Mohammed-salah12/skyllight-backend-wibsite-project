@@ -26,7 +26,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('cms.abouts.create');
     }
 
     /**
@@ -37,7 +37,25 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator($request->all() , [
+            'title' => 'required|string',
+            'expert_description' => 'required|string'
+        ]);
+
+          if(! $validator->fails()){
+              $abouts = new About();
+              $abouts->title = $request->get('title');
+              $abouts->expert_description = $request->get('expert_description');
+
+              $isSaved = $abouts->save();
+              if($isSaved){
+                  return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
+              }else {
+                  return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
+              }
+          }else{
+              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+          }
     }
 
     /**
