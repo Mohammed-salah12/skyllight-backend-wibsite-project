@@ -51,8 +51,8 @@
 <script>
     function performUpdate(id){
       let formData = new FormData();
-      formData.append('title',document.getElementById('main_title').value);
-      formData.append('expert_description',document.getElementById('sub_title').value);
+      formData.append('main_title',document.getElementById('main_title').value);
+      formData.append('sub_title',document.getElementById('sub_title').value);
       formData.append('video', document.getElementById('video').files[0]);
       storeRoute('/cms/admin/update-mains/'+id , formData);
     }

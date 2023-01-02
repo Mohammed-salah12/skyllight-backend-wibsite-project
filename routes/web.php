@@ -56,4 +56,13 @@ Route::get('/', function () {
 
         Route::resource('messages' , MessageController::class);
     Route::post('update-messages/{id}' , [MessageController::class , 'update'])->name('update-messages');
+
+    Route::resource('partners_images' , PartnerImageController::class);
+    Route::post('update-partners_images/{id}' , [PartnerImageController::class , 'update'])->name('partners-images');
+
+    Route::resource('main_images' , MainImageController::class);
+    Route::post('update-main_images/{id}' , [MainImageController::class , 'update'])->name('main-images');
+
+    Route::resource('users' , UserController::class);
+    Route::post('update-users/{id}' , [UserController::class , 'update'])->name('users');
     });
