@@ -25,7 +25,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('cms.partners.create');
     }
 
     /**
@@ -36,7 +36,23 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator($request->all() , [
+            'title' => 'required|string',
+        ]);
+
+          if(! $validator->fails()){
+              $partners = new Partner();
+              $partners->title = $request->get('title');
+
+              $isSaved = $partners->save();
+              if($isSaved){
+                  return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
+              }else {
+                  return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
+              }
+          }else{
+              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+          }
     }
 
     /**
