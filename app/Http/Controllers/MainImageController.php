@@ -55,7 +55,6 @@ class MainImageController extends Controller
               $main_images->image = $imageName;
               }
 
-            $main_images->image = $request->get('image');
 
             $isSaved = $main_images->save();
             if($isSaved){
@@ -119,7 +118,6 @@ class MainImageController extends Controller
               $main_images->image = $imageName;
               }
 
-            $main_images->image = $request->get('image');
 
             $isUpdated = $main_images->save();
             return ['redirect' => route('main_images.index')];

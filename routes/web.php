@@ -5,11 +5,14 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GallreryController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\MainImageController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PartnerImageController;
 use App\Http\Controllers\Service_descriptionController;
 use App\Http\Controllers\Service_ImageController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
