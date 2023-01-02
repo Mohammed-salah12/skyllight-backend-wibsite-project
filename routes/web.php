@@ -3,7 +3,6 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\GallreryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MainImageController;
 use App\Http\Controllers\MessageController;
@@ -76,6 +75,9 @@ Route::get('/', function () {
 
 
 
-    Route::prefix('cms/admin/')->group(function (){
+ 
+
+
+    Route::prefix('cms/admins/')->group(function (){
         Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');
-  });
+      });
