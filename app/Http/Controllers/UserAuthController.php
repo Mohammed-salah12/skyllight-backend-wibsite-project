@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class UserAuthController extends Controller
 {
-    public function showLogin($guard){
-        return response()->view('cms.auth.login' , compact('guard'));
+    public function showLogin(){
+        return response()->view('cms.auth.login');
     }
 
     public function login(Request $request){
