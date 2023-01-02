@@ -10,6 +10,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PartnerImageController;
 use App\Http\Controllers\Service_descriptionController;
 use App\Http\Controllers\Service_ImageController;
+use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
