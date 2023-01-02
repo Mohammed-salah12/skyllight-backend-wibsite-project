@@ -35,7 +35,7 @@
             <textarea class="form-control" name="-sub_title" id="sub_title" cols="30" rows="10" ></textarea>
           </div>,
           <div class="form-group col-md-6">
-            <label for="video">الفيديو</label>
+            <label for="videos">الفيديو</label>
             <input type="file" class="form-control" id="videos" name="videos" placeholder="">
         </div>
       </div>

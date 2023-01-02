@@ -41,7 +41,7 @@
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $main->sub_title }}</textarea></td>
                                     <td>
 
-                                        <video playsinline="playsinline" autoplay muted="muted" loop="loop" controls width="200" height="150" src="{{ asset('storage/images/videos/'.$main->video) }}"></video>
+                                        <video playsinline="playsinline" autoplay muted="muted" loop="loop" controls width="200" height="150" src="{{ asset('storage/images/videos/'.$main->videos) }}"></video>
 
                                     </td>
                                     <td>
