@@ -107,7 +107,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator($request->all() , [
-            'username' => 'unique:users'
+            // 'username' => 'unique:users'
           ]);
 
           if(! $validator->fails()){
@@ -136,7 +136,7 @@ class UserController extends Controller
                   return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
               }
           }else{
-              return response()->json(['icon'=>'error' , 'title' => $validator->getUserBag()->first()],400);
+              return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
           }
         }
 

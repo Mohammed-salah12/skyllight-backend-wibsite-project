@@ -50,7 +50,7 @@
                                     </td>
                                     <td>{{ ($user->first_name . ' ' . $user->last_name ) ?? "" }}</td>
                                     <td>{{ $user->username  }}</td>
-                                    <td>{{ $user->user->mobile ?? "" }}</td>
+                                    <td>{{ $user->mobile ?? "" }}</td>
 
                                     <td>
                                     <div class="btn group">
