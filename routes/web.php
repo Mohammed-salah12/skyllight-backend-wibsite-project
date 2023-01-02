@@ -12,6 +12,7 @@ use App\Http\Controllers\PartnerImageController;
 use App\Http\Controllers\Service_descriptionController;
 use App\Http\Controllers\Service_ImageController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,14 +69,13 @@ Route::get('/', function () {
 
     Route::resource('users' , UserController::class);
     Route::post('update-users/{id}' , [UserController::class , 'update'])->name('users');
-<<<<<<< HEAD
-    });
-=======
-
 
     });
+
+
+
+
 
     Route::prefix('cms/admin/')->group(function (){
         Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');
-             });
->>>>>>> fb15d6e3bbe5700efc85da6933f961254a803845
+  });
