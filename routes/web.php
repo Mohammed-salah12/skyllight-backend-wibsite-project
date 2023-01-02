@@ -72,8 +72,11 @@ Route::get('/', function () {
 
 
 
-  Route::prefix('cms/user/')->group(function (){
-    Route::get('login' , [UserAuthController::class , 'showLogin'])->name('view.login');
-    Route::post('login' , [UserAuthController::class , 'login']);
+    Route::prefix('cms/')->middleware('guest:user')->group(function(){
+        Route::get('user/login' , [UserAuthController::class , 'showLogin'] )->name('view.login');
+        Route::post('user/login' , [UserAuthController::class , 'login']);
+    });
 
-});
+    Route::prefix('cms/admin/')->middleware('auth:user')->group(function(){
+        Route::get('logout' , [UserAuthController::class , 'logout'] )->name('view.test');
+    });
