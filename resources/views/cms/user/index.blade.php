@@ -55,7 +55,7 @@
                                           <a href="{{ route('users.edit' , $user->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-                                         <button type="button" class="btn btn-info" onclick="performDestroy({{ $user->id }} , this)">
+                                         <button type="button" class="btn btn-danger" onclick="performDestroy({{ $user->id }} , this)">
                                             <i class="fas fa-trash"></i>
                                           </button>
                                           </div>
