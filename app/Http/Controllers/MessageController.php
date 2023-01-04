@@ -52,9 +52,9 @@ class MessageController extends Controller
 
               $isSaved = $messages->save();
               if($isSaved){
-                  return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
+                  return response()->json(['icon'=>'success' , 'title'=>"تم الارسال بنجاح"],200);
               }else {
-                  return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed"],400);
+                  return response()->json(['icon'=>'Failed' , 'title'=>$validator->getMessageBag()->first()],400);
               }
           }else{
               return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);

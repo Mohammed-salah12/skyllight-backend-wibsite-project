@@ -67,7 +67,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src="{{ asset('cms/dist/img/CMSA-LOGO.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Sky Lights</span>
@@ -98,7 +98,7 @@
                 <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
-                    الرئيسية | @yield('sub-title')
+                    الرئيسية
                   </p>
                 </a>
 
@@ -118,16 +118,9 @@
             <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('users.index') }}" class="nav-link">
                     <i class="fas fa-desktop ml-2"></i>
                   <p>عرض المسؤولين</p>
-                </a>
-              </li>
-
-               <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-plus ml-2"></i>
-                  <p>اضافة مسؤول</p>
                 </a>
               </li>
 
@@ -152,8 +145,21 @@
 
                 <li class="nav-item">
                   <a href="{{ route('mains.index') }}" class="nav-link">
+                    <i class="fa-solid fa-display"></i>
+                    <p>الصفحة الرئيسية</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('principles.index') }}" class="nav-link">
                     <i class="fas fa-edit"></i>
-                    <p>عرض الصفحة الرئيسية</p>
+                    <p>تعديل وصف الشركة</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="{{ route('main_images.index') }}" class="nav-link">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>اضافة صور خدماتنا</p>
                   </a>
                 </li>
 
@@ -172,7 +178,7 @@
                 <li class="nav-item">
                     <a href="{{ route('abouts.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
-                      <p>عرض من نحن</p>
+                      <p>صفحة من نحن</p>
                     </a>
                   </li>
 
@@ -189,9 +195,21 @@
               <ul class="nav nav-treeview">
 
                 <li class="nav-item">
-                    <a href="{{ route('service_descriptions.index') }}" class="nav-link">
+                    <a href="{{ route('services.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
-                      <p>عرض خدماتنا</p>
+                      <p>صفحة خدماتنا</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
+                    <a href="{{ route('service_descriptions.index') }}" class="nav-link">
+                        <i class="fas fa-edit"></i>
+                      <p>تعديل خدمة</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
+                    <a href="{{ route('service_descriptions.index') }}" class="nav-link">
+                        <i class="fa-solid fa-plus"></i>
+                      <p>اضافة صور خدماتنا</p>
                     </a>
                   </li>
 
@@ -210,7 +228,13 @@
                 <li class="nav-item">
                     <a href="{{ route('galleries.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
-                      <p>عرض معرض الاعمال</p>
+                      <p>صفحة معرض الاعمال</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
+                    <a href="{{ route('gallery_videos.index') }}" class="nav-link">
+                      <i class="fa-solid fa-plus"></i>
+                      <p>اضافة فيديو بمعرض الأعمال</p>
                     </a>
                   </li>
 
@@ -229,7 +253,13 @@
                 <li class="nav-item">
                     <a href="{{ route('partners.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
-                      <p>عرض شركاء النجاح</p>
+                      <p>صفحة شركاء النجاح</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
+                    <a href="{{ route('partners.index') }}" class="nav-link">
+                        <i class="fa-solid fa-plus"></i>
+                      <p>اضافة شريك</p>
                     </a>
                   </li>
 
@@ -249,7 +279,13 @@
                 <li class="nav-item">
                     <a href="{{ route('contacts.index') }}" class="nav-link">
                       <i class="fas fa-edit"></i>
-                      <p>عرض تواصل معنا</p>
+                      <p>صفحة تواصل معنا</p>
+                    </a>
+                  </li>
+                <li class="nav-item">
+                    <a href="{{ route('messages.index') }}" class="nav-link">
+                      <i class="fas fa-edit"></i>
+                      <p>عرض الرسائل</p>
                     </a>
                   </li>
 
@@ -356,7 +392,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-
 <script src="{{asset('cms/plugins/toastr/toastr.min.js')}}"></script>
 <script src="{{asset('cms/js/crud.js')}}"></script>
 @yield('scripts')

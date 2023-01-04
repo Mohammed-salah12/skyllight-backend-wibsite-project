@@ -34,7 +34,7 @@
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="button" onclick="performUpdate({{ $partners->id }})" class="btn btn-primary">حدث</button>
+        <button type="button" onclick="performUpdate({{ $partners->id }})" class="btn btn-primary">تحديث</button>
         <a href="{{ route('partners.index') }}" type="button" class="btn btn-secondary">إلغاء</a>
       </div>
     </form>
