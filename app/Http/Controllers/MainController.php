@@ -44,19 +44,8 @@ class MainController extends Controller
 
           if(! $validator->fails()){
               $mains = new Main();
-              if (request()->hasFile('videos')) {
-
-                $videos = $request->file('videos');
-
-                $videoName = time() . 'videos.' . $videos->getClientOriginalExtension();
-
-                $videos->move('storage/images/videos', $videoName);
-
-                $mains->videos = $videoName;
-                }
                 $mains->main_title = $request->get('main_title');
                 $mains->sub_title = $request->get('sub_title');
-                // $mains->videos = $request->get('videos');
 
               $isSaved = $mains->save();
               if($isSaved){
@@ -109,19 +98,8 @@ class MainController extends Controller
         if(! $validator->fails()){
 
             $mains =  Main::findOrFail($id);
-            if (request()->hasFile('videos')) {
-
-                $videos = $request->file('videos');
-
-                $videoName = time() . 'videos.' . $videos->getClientOriginalExtension();
-
-                $videos->move('storage/images/videos', $videoName);
-
-                $mains->videos = $videoName;
-                }
                 $mains->main_title = $request->get('main_title');
                 $mains->sub_title = $request->get('sub_title');
-                // $mains->videos = $request->get('videos');
 
 
             $isUpdated = $mains->save();

@@ -89,8 +89,8 @@ Route::get('/', function () {
         Route::post('user/login' , [UserAuthController::class , 'login']);
     });
 
-    Route::prefix('cms/admin/')->middleware('auth:user')->group(function(){
-        Route::get('logout' , [UserAuthController::class , 'logout'] )->name('view.test');
+    Route::prefix('cms/')->middleware('auth:user')->group(function(){
+        Route::get('user/logout' , [UserAuthController::class , 'logout'] )->name('view.test');
     });
 
     Route::prefix('front/')->group(function(){

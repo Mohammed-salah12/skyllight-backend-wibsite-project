@@ -28,7 +28,7 @@ $principles = Principle::all();
       muted="muted"
       loop="loop"
     >
-      <source src="{{ asset('storage/images/videos/'.$main->videos) }}" loading="lazy" type="video/mp4" />
+      <source src="{{asset('website/assets/videos/سكاي لايت.mp4-1 (1).mp4')}}" loading="lazy" type="video/mp4" />
     </video>
       @endforeach
 

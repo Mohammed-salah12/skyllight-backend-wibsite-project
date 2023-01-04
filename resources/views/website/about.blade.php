@@ -47,41 +47,18 @@ $principles = Principle::all();
             </div>
 
             <div class="col pt-5">
-              <!-- Carousel
-================================================== -->
-
-
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-
-      <img src="assets/images/sections_img/Conference-organizing-companies-in-Abu-Dhabi-Body-01-20220621-ar-1024x640.jpg" class="d-block w-100" alt="Wild Landscape" />
-
-    </div>
-
-    <div class="carousel-item">
-      <img src="assets/images/sections_img/95046-1937118527.jpg" class="d-block w-100" alt="Camera" />
-
-    </div>
-
-
-
-    <div class="carousel-item">
-      <img src="assets/images/gallery/4.jpg" class="d-block w-100" alt="Exotic Fruits" />
-
-    </div>
-  </div>
-
-
-  <button class="btnone carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-    data-bs-slide="prev">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>  </button>
-  <button class="btntwo carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-    data-bs-slide="next">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </button>
-</div>
-            </div>
+                <div id="carouselExampleControls" class="" data-bs-ride="carousel">
+                  <div class="">
+                    <div class="carousel-item active">
+                      <img
+                        src="{{ asset('website/assets/images/sections_img/Conference-organizing-companies-in-Abu-Dhabi-Body-01-20220621-ar-1024x640.jpg') }}"
+                        class="d-block w-100"
+                        alt="Wild Landscape"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
     </section>

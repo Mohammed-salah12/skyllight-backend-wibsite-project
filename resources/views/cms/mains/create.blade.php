@@ -33,11 +33,7 @@
         <div class="form-group">
             <label for="sub_title"> ادخل العنوان الفرعي</label>
             <textarea class="form-control" name="-sub_title" id="sub_title" cols="30" rows="10" ></textarea>
-          </div>,
-          <div class="form-group col-md-6">
-            <label for="videos">الفيديو</label>
-            <input type="file" class="form-control" id="videos" name="videos" placeholder="">
-        </div>
+          </div>
       </div>
       <!-- /.card-body -->
 
@@ -57,7 +53,6 @@
     let formData = new FormData();
     formData.append('main_title',document.getElementById('main_title').value);
     formData.append('sub_title',document.getElementById('sub_title').value);
-    formData.append('videos', document.getElementById('videos').files[0]);
     store('/cms/admin/mains' , formData)
   }
 

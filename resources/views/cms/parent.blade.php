@@ -219,7 +219,7 @@
               <a href="#" class="nav-link">
                   <i class="fas fa-users ml-2"></i>
                 <p>
-                   معرض الاعمال السابقة
+                   معرض الاعمال
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -292,14 +292,22 @@
               </ul>
             </li>
 
+            <li class="nav-header">
+                الاعدادات
+           </li>
 
-
-          <li class="nav-header">
-             الإعدادات
-        </li>
-
-
-        </ul>
+            <li class="nav-item">
+                <a href="{{ route('messages.index') }}" class="nav-link">
+                  <i class="fas fa-edit"></i>
+                  <p>تغيير كلمة المرور</p>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a href="{{ route('view.test') }}" class="nav-link">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  <p>تسجيل الخروج</p>
+                </a>
+              </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

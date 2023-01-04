@@ -15,7 +15,7 @@ class GalleryVideoController extends Controller
     public function index()
     {
         //
-        $gallery_videos = GalleryVideo::orderBy('id' , 'desc')->simplePaginate(5);
+        $gallery_videos = GalleryVideo::orderBy('id', 'desc')->simplePaginate(5);
         return response()->view('cms.gallery_video.index', compact('gallery_videos'));
     }
 
@@ -39,35 +39,35 @@ class GalleryVideoController extends Controller
     public function store(Request $request)
     {
         //
-        $validator = Validator($request->all() , [
+        $validator = Validator($request->all(), [
             'link' => 'url',
             'image' => 'file'
         ]);
 
-        if(! $validator->fails()){
-          $gallery_videos = new GalleryVideo();;
-          if (request()->hasFile('image')) {
+        if (!$validator->fails()) {
+            $gallery_videos = new GalleryVideo();;
+            if (request()->hasFile('image')) {
 
-            $image = $request->file('image');
+                $image = $request->file('image');
 
-            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+                $imageName = time() . 'image.' . $image->getClientOriginalExtension();
 
-            $image->move('storage/images/gallery_video', $imageName);
+                $image->move('storage/images/gallery_video', $imageName);
 
-            $gallery_videos->image = $imageName;
+                $gallery_videos->image = $imageName;
             }
 
-        $gallery_videos->link = $request->get('link');
+            $gallery_videos->link = $request->get('link');
 
             $isSaved  = $gallery_videos->save();
 
-            if($isSaved ){
-                return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
-            }else {
-                return response()->json(['icon'=>'Failed' , 'title'=>"Created is Failed",'redirect' => route('gallery_videos.index')],400);
+            if ($isSaved) {
+                return response()->json(['icon' => 'success', 'title' => "Created is successfully"], 200);
+            } else {
+                return response()->json(['icon' => 'Failed', 'title' => "Created is Failed", 'redirect' => route('gallery_videos.index')], 400);
             }
-        }else{
-            return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+        } else {
+            return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
         }
     }
 
@@ -92,7 +92,7 @@ class GalleryVideoController extends Controller
     {
         //
         $gallery_videos = GalleryVideo::findOrFail($id);
-        return response()->view('cms.gallery_video.edit' , compact('gallery_videos'));
+        return response()->view('cms.gallery_video.edit', compact('gallery_videos'));
     }
 
     /**
@@ -105,34 +105,35 @@ class GalleryVideoController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $validator = Validator($request->all() , [
-
+        $validator = Validator($request->all(), [
+            'link' => 'url',
+            'image' => 'file'
         ]);
 
-        if(! $validator->fails()){
-          $gallery_videos =  GalleryVideo::findOrFail($id);
-          if (request()->hasFile('image')) {
+        if (!$validator->fails()) {
+            $gallery_videos =  GalleryVideo::findOrFail($id);
+            if (request()->hasFile('image')) {
 
-            $image = $request->file('image');
+                $image = $request->file('image');
 
-            $imageName = time() . 'image.' . $image->getClientOriginalExtension();
+                $imageName = time() . 'image.' . $image->getClientOriginalExtension();
 
-            $image->move('storage/images/gallery_video', $imageName);
+                $image->move('storage/images/gallery_video', $imageName);
 
-            $gallery_videos->image = $imageName;
+                $gallery_videos->image = $imageName;
             }
 
-        $gallery_videos->link = $request->get('link');
+            $gallery_videos->link = $request->get('link');
 
             $isUpdated = $gallery_videos->save();
-            return['redirect' => route ('gallery_videos.index')];
-            if($isUpdated){
-                return response()->json(['icon'=>'success' , 'title'=>"Updated is successfully"],200);
-            }else {
-                return response()->json(['icon'=>'Failed' , 'title'=>"Updated is Failed"],400);
+            return ['redirect' => route('gallery_videos.index')];
+            if ($isUpdated) {
+                return response()->json(['icon' => 'success', 'title' => "Updated is successfully"], 200);
+            } else {
+                return response()->json(['icon' => 'Failed', 'title' => "Updated is Failed"], 400);
             }
-        }else{
-            return response()->json(['icon'=>'error' , 'title' => $validator->getMessageBag()->first()],400);
+        } else {
+            return response()->json(['icon' => 'error', 'title' => $validator->getMessageBag()->first()], 400);
         }
     }
 
@@ -146,7 +147,6 @@ class GalleryVideoController extends Controller
     {
         //
         $gallery_videos = GalleryVideo::destroy($id);
-        return response()->json(['icon' => 'success' , 'title'=> "Deleted is Successfully"] , 200);
-
+        return response()->json(['icon' => 'success', 'title' => "Deleted is Successfully"], 200);
     }
 }
