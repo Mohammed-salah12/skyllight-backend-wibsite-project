@@ -38,10 +38,11 @@ class UserAuthController extends Controller
     }
 
     public function logout(Request $request){
-        $guard = auth('admin')->check() ? 'admin' : 'author';
-        Auth::guard($guard)->logout();
+        // $guard = auth('user')->check() ? 'admin' : 'author';
+        Auth::guard('user')->logout();
         $request->session()->invalidate();
-        return redirect()->route('view.login' , $guard);
+        return redirect()->route('view.login');
+        // return redirect()->route('/button_users');
 
 
     }
