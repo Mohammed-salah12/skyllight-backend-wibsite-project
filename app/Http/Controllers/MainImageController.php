@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Main_Image;
+use App\Models\MainImage;
 use Illuminate\Http\Request;
 
 class MainImageController extends Controller
@@ -14,7 +15,7 @@ class MainImageController extends Controller
      */
     public function index()
     {
-        $main_images = Main_Image::orderBy('id' , 'desc')->simplePaginate(5);
+        $main_images = MainImage::orderBy('id' , 'desc')->simplePaginate(5);
         return response()->view('cms.main_image.index', compact('main_images'));
     }
 
@@ -43,7 +44,7 @@ class MainImageController extends Controller
 
         if(! $validator->fails()){
 
-            $main_images = new Main_Image();
+            $main_images = new MainImage();
             if (request()->hasFile('image')) {
 
               $image = $request->file('image');
@@ -87,7 +88,7 @@ class MainImageController extends Controller
      */
     public function edit($id)
     {
-        $main_images = Main_Image::findOrFail($id);
+        $main_images = MainImage::findOrFail($id);
         return response()->view('cms.main_image.edit' , compact('main_images'));
     }
 
@@ -106,7 +107,7 @@ class MainImageController extends Controller
 
         if(! $validator->fails()){
 
-            $main_images =  main_Image::findOrFail($id);
+            $main_images =  MainImage::findOrFail($id);
             if (request()->hasFile('image')) {
 
               $image = $request->file('image');
@@ -140,7 +141,7 @@ class MainImageController extends Controller
      */
     public function destroy($id)
     {
-        $main_images = Main_Image::destroy($id);
+        $main_images = MainImage::destroy($id);
         return response()->json(['icon'=>'success' , 'title'=>"Deleted is successfully"],200);
     }
 }

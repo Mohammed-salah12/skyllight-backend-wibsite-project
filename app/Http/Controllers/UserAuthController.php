@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class UserAuthController extends Controller
 {
-    public function showLogin(){
-        return response()->view('cms.auth.login');
+    public function showLogin($guard){
+        return response()->view('cms.auth.login' ,compact('guard'));
     }
 
     public function login(Request $request){
@@ -23,7 +23,7 @@ class UserAuthController extends Controller
             'password' => $request->get('password'),
         ] ;
         if(! $validator->fails()){
-            if(Auth::guard($request->get('guard'))->attempt($credintials)){
+            if(Auth::guard($request->get('guard'))->attempt($credintials ,  $request->get('remember_me'))){
                 return response()->json(['icon' => 'success' , 'title' =>'تمت عملية تسجيل الدخول' ] , 200);
             }
             else {

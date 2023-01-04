@@ -30,7 +30,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>الصورة</th>
                                     <th>الاسم</th>
                                     <th>اسم المستخدم</th>
@@ -42,7 +41,6 @@
                                 @foreach($users as $user)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $user->id }}</td>
                                     <td>
                                         <img class="img-circle img-bordered-sm"
                                              src="{{ asset('storage/images/user/'.$user->image) }}"
@@ -57,7 +55,9 @@
                                           <a href="{{ route('users.edit' , $user->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-
+                                         <button type="button" class="btn btn-info" onclick="performDestroy({{ $user->id }} , this)">
+                                            <i class="fas fa-trash"></i>
+                                          </button>
                                           </div>
                                       </td>
 

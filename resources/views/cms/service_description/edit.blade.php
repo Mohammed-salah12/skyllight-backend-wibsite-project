@@ -30,8 +30,8 @@
         </div>
         <div class="form-group">
           <label for="description">الوصف</label>
-          <input type="text" class="form-control" id="description"
-          value="{{ $service_descriptions->description }}"  name="description" placeholder="أدخل الوصف">
+          <textarea type="text" class="form-control" id="description"
+          value="{{ $service_descriptions->description }}"  name="description" placeholder="أدخل الوصف"></textarea>
         </div>
       </div>
       <!-- /.card-body -->

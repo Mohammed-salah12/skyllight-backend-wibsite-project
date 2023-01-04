@@ -24,7 +24,6 @@
                         <h3 class="text-left">عرض الرسائل</h3>
 
 
-                        <a href="{{ route('messages.create') }}" type="button" class="btn btn-info">أضف رسالة جديدة</a>
 
                     </div>
                     <!-- /.card-header -->
@@ -33,8 +32,10 @@
                             <thead>
                                 <tr>
                                     <th>رقم المعرف</th>
-                                    <th>اسم الخدمة</th>
-                                    <th>الوصف</th>
+                                    <th>اسم المرسل</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>البريد</th>
+                                    <th>الرسالة</th>
                                     <th>الإعدادات</th>
                                 </tr>
                             </thead>
@@ -46,7 +47,7 @@
                                     <td>{{ $message->name }}</td>
                                     <td>{{ $message->phone }}</td>
                                     <td>{{ $message->email }}</td>
-                                    <td>{{ $message->message  }}</td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $message->message  }}</textarea></td>
                                     <td>
                                     <div class="btn group">
                                           <a href="{{ route('messages.edit' , $message->id ) }}" type="button" class="btn btn-info">

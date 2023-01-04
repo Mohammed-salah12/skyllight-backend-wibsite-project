@@ -40,7 +40,7 @@
 
                 <div class="col-md-12">
 
-                  {{-- <div class="d-flex justify-content-between mb-3">
+                  <div class="d-flex justify-content-between mb-3">
 
                     <div class="icheck-primary">
 
@@ -51,7 +51,7 @@
 
                       </div>
 
-                  </div> --}}
+                  </div>
 
                   <button type="button" onclick="login()" class="btn btn-primary btn-block">تسجيل الدخول</button>
 
@@ -100,6 +100,7 @@ function login() {
     axios.post('/cms/user/login', {
       username: document.getElementById('username').value,
       password: document.getElementById('password').value,
+      remember_me: document.getElementById('remember').checked,
     //   guard: guard
     })
         .then(function (response) {

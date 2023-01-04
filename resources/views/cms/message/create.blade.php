@@ -37,7 +37,7 @@
           </div>
         <div class="form-group">
           <label for="message">الرسالة</label>
-          <input type="text" class="form-control" id="message" name="message" placeholder="ادخل الوصف">
+          <textarea type="text" class="form-control" id="message" name="message" placeholder="ادخل الوصف"></textarea>
         </div>
       </div>
       <!-- /.card-body -->

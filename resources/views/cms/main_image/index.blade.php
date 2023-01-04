@@ -22,7 +22,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="">عرض صور الصفحة الرئيسية</h3>
-                        <a href="{{ route('main_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a>
                         <div class="card-tools">
 
 

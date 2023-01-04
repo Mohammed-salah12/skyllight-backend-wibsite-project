@@ -21,10 +21,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-left">Index Data Of Service</h3>
+                        <h3 class="text-left">عرض الخدمات</h3>
 
 
-                        <a href="{{ route('service_descriptions.create') }}" type="button" class="btn btn-info">إضافة خدمة جديدة</a>
 
                     </div>
                     <!-- /.card-header -->
@@ -44,7 +43,7 @@
                                 <tr>
                                     <td>{{ $service_description->id }}</td>
                                     <td>{{ $service_description->name }}</td>
-                                    <td>{{ $service_description->description  }}</td>
+                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $service_description->description  }}</textarea></td>
                                     <td>
                                     <div class="btn group">
                                           <a href="{{ route('service_descriptions.edit' , $service_description->id ) }}" type="button" class="btn btn-info">
