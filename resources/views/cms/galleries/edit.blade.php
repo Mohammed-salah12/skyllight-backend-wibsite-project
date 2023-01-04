@@ -5,15 +5,15 @@
 
 @section('main_title' , 'عرض معرض الاعمال')
 
-@section('sub_title' , 'تعديل معرض الاعما')
+@section('sub_title' , 'تعديل معرض الاعمال')
 
 
 @section('styles')
 
 @endsection
 
-@section('page title', 'معرض الاعما')
-@section('active title', 'تعديل معرض الاعما')
+@section('page title', 'معرض الاعمال')
+@section('active title', 'تعديل معرض الاعمال')
 
 
 @section('content')
@@ -35,7 +35,7 @@
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="button" onclick="performUpdate({{ $galleries->id }})" class="btn btn-primary">حدث</button>
+        <button type="button" onclick="performUpdate({{ $galleries->id }})" class="btn btn-primary">تحديث</button>
         <a href="{{ route('galleries.index') }}" type="button" class="btn btn-secondary">إلغاء</a>
       </div>
     </form>

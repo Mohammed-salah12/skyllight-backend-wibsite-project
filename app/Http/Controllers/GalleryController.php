@@ -41,10 +41,10 @@ class GalleryController extends Controller
         ]);
 
           if(! $validator->fails()){
-              $partners = new Gallery();
-              $partners->title = $request->get('title');
+              $galleries = new Gallery();
+              $galleries->title = $request->get('title');
 
-              $isSaved = $partners->save();
+              $isSaved = $galleries->save();
               if($isSaved){
                   return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
               }else {
