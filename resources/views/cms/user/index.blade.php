@@ -82,7 +82,7 @@
 @section('scripts')
 <script>
   function performDestroy(id , reference){
-    let url = "/cms/user/users/"+id;
+    let url = "/cms/admin/users/"+id;
     confirmDestroy(url, reference);
   }
 
