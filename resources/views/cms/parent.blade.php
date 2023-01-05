@@ -257,7 +257,7 @@
                     </a>
                   </li>
                 <li class="nav-item">
-                    <a href="{{ route('partners_images.index') }}" class="nav-link">
+                    <a href="{{ route('partner_images.index') }}" class="nav-link">
                         <i class="fa-solid fa-plus"></i>
                       <p>اضافة شريك</p>
                     </a>
