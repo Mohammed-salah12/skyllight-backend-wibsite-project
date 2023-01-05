@@ -47,7 +47,7 @@
                     <div class="form-group col-md-6">
                         <label for="password">كلمة المرور</label>
                         <input type="password" disabled class="form-control" id="password" name="password"
-                            placeholder="أدخل كلمة المرور">
+                            value="{{ $users->password }}">
                     </div>
                 </div>
 
