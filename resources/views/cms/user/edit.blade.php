@@ -38,18 +38,7 @@
 
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="username">اسم المستخدم</label>
-                        <input type="text" class="form-control" id="username"
-                        name="username" value="{{ $users->username }}" placeholder="أدخل المستخدم">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="password">كلمة المرور</label>
-                        <input type="password" disabled class="form-control" id="password" name="password"
-                            value="{{ $users->password }}">
-                    </div>
-                </div>
+              
 
                 <div class="row">
                     <div class="form-group col-md-6">

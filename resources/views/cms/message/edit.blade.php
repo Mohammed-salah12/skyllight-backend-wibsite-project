@@ -40,8 +40,8 @@
           </div>
         <div class="form-group">
           <label for="message">الرسالة</label>
-          <textarea type="text" class="form-control" id="message"
-          value="{{ $messages->message }}"  name="message" placeholder="أدخل الرسالة"></textarea>
+          <textarea type="text" rows="6" class="form-control" id="message"
+            name="message" placeholder="أدخل الرسالة">{{ $messages->message }}</textarea>
         </div>
       </div>
       <!-- /.card-body -->

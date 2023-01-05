@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
           <label for="description">الوصف</label>
-          <textarea type="text" class="form-control" id="description" name="description" placeholder="ادخل الوصف"></textarea>
+          <textarea type="text" rows="6" class="form-control" id="description" name="description" placeholder="ادخل الوصف"></textarea>
         </div>
       </div>
       <!-- /.card-body -->
