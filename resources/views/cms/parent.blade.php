@@ -159,7 +159,7 @@
                 <li class="nav-item">
                   <a href="{{ route('main_images.index') }}" class="nav-link">
                     <i class="fa-solid fa-plus"></i>
-                    <p>اضافة صور خدماتنا</p>
+                    <p>تعديل صور البطاقات الثلاثة</p>
                   </a>
                 </li>
 
@@ -209,7 +209,7 @@
                 <li class="nav-item">
                     <a href="{{ route('service_descriptions.index') }}" class="nav-link">
                         <i class="fa-solid fa-plus"></i>
-                      <p>اضافة صور خدماتنا</p>
+                      <p>اضافة صور لأعمالنا</p>
                     </a>
                   </li>
 
@@ -257,7 +257,7 @@
                     </a>
                   </li>
                 <li class="nav-item">
-                    <a href="{{ route('partners.index') }}" class="nav-link">
+                    <a href="{{ route('partners_images.index') }}" class="nav-link">
                         <i class="fa-solid fa-plus"></i>
                       <p>اضافة شريك</p>
                     </a>

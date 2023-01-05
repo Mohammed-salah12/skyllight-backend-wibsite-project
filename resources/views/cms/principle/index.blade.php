@@ -26,7 +26,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead >
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>نبذة</th>
                                     <th>رؤيتنا</th>
                                     <th>رسالتنا</th>
@@ -37,11 +36,10 @@
                             <tbody>
                                 @foreach($principles as $principle)
                                 <tr>
-                                    <td>{{ $principle->id }}</td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $principle->brief }}</textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $principle->vision }}</textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $principle->message }}</textarea></td>
-                                    <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $principle->philosophy }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="10" 	readonly >{{ $principle->brief }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="10" 	readonly >{{ $principle->vision }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="10" 	readonly >{{ $principle->message }}</textarea></td>
+                                    <td><textarea class="form-control" cols="30" rows="10" 	readonly >{{ $principle->philosophy }}</textarea></td>
 
                                     <td>
                                     <div class="btn group">

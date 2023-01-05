@@ -27,16 +27,16 @@
       <div class="card-body">
         <div class="form-group">
           <label for="main_title"> ادخل العنوان الاساسي الجديد</label>
-          <textarea class="form-control" name="main_title" id="main_title" cols="30" rows="10" >{{ $mains->main_title }}</textarea>
+          <textarea class="form-control" name="main_title" id="main_title" cols="30" rows="6" >{{ $mains->main_title }}</textarea>
           <label for="sub_title"> ادخل العنوان الفرعي الجديد</label>
-          <textarea class="form-control" name="sub_title" id="sub_title" cols="30" rows="10" >{{ $mains->sub_title }}</textarea>
+          <textarea class="form-control" name="sub_title" id="sub_title" cols="30" rows="6" >{{ $mains->sub_title }}</textarea>
         </div>
 
       </div>
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="button" onclick="performUpdate({{ $mains->id }})" class="btn btn-primary">حدث</button>
+        <button type="button" onclick="performUpdate({{ $mains->id }})" class="btn btn-primary">تحديث</button>
         <a href="{{ route('mains.index') }}" type="button" class="btn btn-secondary">إلغاء</a>
       </div>
     </form>
