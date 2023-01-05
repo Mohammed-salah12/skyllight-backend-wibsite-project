@@ -15,7 +15,7 @@ class Service_ImageController extends Controller
      */
     public function index()
     {
-        $service_images = Service_image::orderBy('id' , 'desc')->simplePaginate(5);
+        $service_images = Service_image::orderBy('id' , 'asc')->simplePaginate(5);
         return response()->view('cms.service_image.index', compact('service_images'));
     }
 

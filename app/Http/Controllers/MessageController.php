@@ -14,7 +14,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::orderBy('id' ,'desc')->paginate(5);
+        $messages = Message::orderBy('id' ,'asc')->paginate(5);
 
         return response()->view('cms.message.index' , compact('messages'));
     }

@@ -15,7 +15,7 @@ class PartnerImageController extends Controller
      */
     public function index()
     {
-        $partner_images = PartnerImage::orderBy('id' , 'desc')->simplePaginate(5);
+        $partner_images = PartnerImage::orderBy('id' , 'asc')->simplePaginate(5);
         return response()->view('cms.partner_image.index', compact('partner_images'));
     }
 

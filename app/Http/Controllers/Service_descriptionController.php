@@ -14,7 +14,7 @@ class Service_descriptionController extends Controller
      */
     public function index(Request $request)
     {
-        $service_descriptions = Service_description::orderBy('id' ,'desc')->paginate(5);
+        $service_descriptions = Service_description::orderBy('id' ,'asc')->paginate(5);
 
         return response()->view('cms.service_description.index' , compact('service_descriptions'));
     }

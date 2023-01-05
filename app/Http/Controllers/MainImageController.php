@@ -15,7 +15,7 @@ class MainImageController extends Controller
      */
     public function index()
     {
-        $main_images = MainImage::orderBy('id' , 'desc')->simplePaginate(5);
+        $main_images = MainImage::orderBy('id' , 'asc')->simplePaginate(5);
         return response()->view('cms.main_image.index', compact('main_images'));
     }
 
