@@ -31,7 +31,7 @@
         <div class="form-group">
           <label for="description">الوصف</label>
           <textarea type="text" class="form-control" id="description"
-          value="{{ $service_descriptions->description }}"  name="description" placeholder="أدخل الوصف"></textarea>
+           name="description" rows="6" placeholder="أدخل الوصف">{{ $service_descriptions->description }}</textarea>
         </div>
       </div>
       <!-- /.card-body -->

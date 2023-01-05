@@ -22,7 +22,7 @@
                 <div class="card">
                     <div class="card-header bg-info">
                         <h3 class=" ">عرض صور أعمال الشركاء</h3>
-                        {{-- <a href="{{ route('partner_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a> --}}
+                        <a href="{{ route('partner_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a>
                         <div class="card-tools">
 
 
@@ -55,7 +55,9 @@
                                           <a href="{{ route('partner_images.edit' , $partner_image->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-
+                                         <button type="button" class="btn btn-danger" onclick="performDestroy({{ $partner_image->id }} , this)">
+                                            <i class="fas fa-trash"></i>
+                                          </button>
                                           </div>
                                       </td>
 

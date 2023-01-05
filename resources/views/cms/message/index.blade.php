@@ -50,9 +50,9 @@
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $message->message  }}</textarea></td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('messages.edit' , $message->id ) }}" type="button" class="btn btn-info">
-                                            <i class="fas fa-edit"> </i>
-                                         </a>
+                                        <button type="button" class="btn btn-danger" onclick="performDestroy({{ $message->id }} , this)">
+                                            <i class="fas fa-trash"></i>
+                                          </button>
 
                                           </div>
                                       </td>
