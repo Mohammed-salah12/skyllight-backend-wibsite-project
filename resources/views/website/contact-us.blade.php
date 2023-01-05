@@ -103,13 +103,11 @@
 <script>
     let inputss = document.querySelectorAll(".one");
     let sendBtn = document.querySelector(".send");
-        sendBtn.onclick = (_) => {.
+        sendBtn.onclick = (_) => {
             Store();
-        for (let index = 0; index < inputss.length; index++) {
-        inputss[index].value = "";
-        }
-
-};
+            for(let i = 0 ; inputss.length ; i++)
+            inputss[i].value = "";
+        };
 
   </script>
     @endsection
