@@ -207,7 +207,7 @@
                     </a>
                   </li>
                 <li class="nav-item">
-                    <a href="{{ route('service_descriptions.index') }}" class="nav-link">
+                    <a href="{{ route('service_images.index') }}" class="nav-link">
                         <i class="fa-solid fa-plus"></i>
                       <p>اضافة صور لأعمالنا</p>
                     </a>
