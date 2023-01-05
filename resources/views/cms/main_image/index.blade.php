@@ -54,7 +54,9 @@
                                           <a href="{{ route('main_images.edit' , $main_image->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-
+                                         <button type="button" class="btn btn-danger" onclick="performDestroy({{ $user->id }} , this)">
+                                            <i class="fas fa-trash"></i>
+                                          </button>
                                           </div>
                                       </td>
 
