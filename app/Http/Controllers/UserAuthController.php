@@ -16,6 +16,8 @@ class UserAuthController extends Controller
         $validator = Validator($request->all() ,[
             'username' => 'required|string' ,
             'password' => 'required|string',
+        ] , [
+            'username.exsit' => 'اسم المستخدم غير موجود'
         ]);
 
         $credintials =[

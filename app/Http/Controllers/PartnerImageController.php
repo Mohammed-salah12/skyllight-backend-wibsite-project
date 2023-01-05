@@ -15,8 +15,8 @@ class PartnerImageController extends Controller
      */
     public function index()
     {
-        $partners_images = PartnerImage::orderBy('id' , 'desc')->simplePaginate(5);
-        return response()->view('cms.partner_image.index', compact('partners_images'));
+        $partner_images = PartnerImage::orderBy('id' , 'desc')->simplePaginate(5);
+        return response()->view('cms.partner_image.index', compact('partner_images'));
     }
 
     /**
@@ -44,16 +44,16 @@ class PartnerImageController extends Controller
 
         if(! $validator->fails()){
 
-            $partners_images = new PartnerImage();
+            $partner_images = new PartnerImage();
             if (request()->hasFile('image')) {
 
               $image = $request->file('image');
               $imageName = time() . 'image.' . $image->getClientOriginalExtension();
-              $image->move('storage/images/partners_image', $imageName);
-              $partners_images->image = $imageName;
+              $image->move('storage/images/partner_image', $imageName);
+              $partner_images->image = $imageName;
               }
 
-            $isSaved = $partners_images->save();
+            $isSaved = $partner_images->save();
             if($isSaved){
 
                 return response()->json(['icon'=>'success' , 'title'=>"تم الحفظ بنجاح"],200);
@@ -84,8 +84,8 @@ class PartnerImageController extends Controller
      */
     public function edit($id)
     {
-        $partners_images = PartnerImage::findOrFail($id);
-        return response()->view('cms.partner_image.edit' , compact('partners_images'));
+        $partner_images = PartnerImage::findOrFail($id);
+        return response()->view('cms.partner_image.edit' , compact('partner_images'));
     }
 
     /**
@@ -103,7 +103,7 @@ class PartnerImageController extends Controller
 
         if(! $validator->fails()){
 
-            $partners_images =  PartnerImage::findOrFail($id);
+            $partner_images =  PartnerImage::findOrFail($id);
             if (request()->hasFile('image')) {
 
               $image = $request->file('image');
@@ -112,12 +112,12 @@ class PartnerImageController extends Controller
 
               $image->move('storage/images/main_image', $imageName);
 
-              $partners_images->image = $imageName;
+              $partner_images->image = $imageName;
               }
 
 
-            $isUpdated = $partners_images->save();
-            return ['redirect' => route('partners_images.index')];
+            $isUpdated = $partner_images->save();
+            return ['redirect' => route('partner_images.index')];
             if($isUpdated){
 
                 return response()->json(['icon'=>'success' , 'title'=>"Created is successfully"],200);
@@ -137,7 +137,7 @@ class PartnerImageController extends Controller
      */
     public function destroy($id)
     {
-        $partners_images = PartnerImage::destroy($id);
+        $partner_images = PartnerImage::destroy($id);
         return response()->json(['icon'=>'success' , 'title'=>"Deleted is successfully"],200);
     }
 }

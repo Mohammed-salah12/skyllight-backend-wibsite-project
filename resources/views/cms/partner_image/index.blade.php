@@ -21,8 +21,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        {{-- <h3 class="card-title">Index Data Of Service Images</h3> --}}
-                        <a href="{{ route('partners_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a>
+                        <h3 class="card-title">عرض صور أعمال الشركاء</h3>
+                        {{-- <a href="{{ route('partner_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a> --}}
                         <div class="card-tools">
 
 
@@ -41,18 +41,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($partners_images as $partners_image)
+                                @foreach($partner_images as $partner_image)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $partners_image->id }}</td>
+                                    <td>{{ $partner_image->id }}</td>
                                     <td>
                                         <img class="img-circle img-bordered-sm"
-                                             src="{{ asset('storage/images/partners_image/'.$partners_image->image) }}"
+                                             src="{{ asset('storage/images/partner_image/'.$partner_image->image) }}"
                                              width="60" height="60" alt="User_Image">
                                     </td>
                                     <td>
                                     <div class="btn group">
-                                          <a href="{{ route('partners_images.edit' , $partners_image->id ) }}" type="button" class="btn btn-info">
+                                          <a href="{{ route('partner_images.edit' , $partner_image->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
 
@@ -69,7 +69,7 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-                {{ $partners_images->links() }}
+                {{ $partner_images->links() }}
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
 @section('scripts')
 <script>
   function performDestroy(id , reference){
-    let url = "/cms/admin/partners_images/"+id;
+    let url = "/cms/admin/partner_images/"+id;
     confirmDestroy(url, reference);
   }
 

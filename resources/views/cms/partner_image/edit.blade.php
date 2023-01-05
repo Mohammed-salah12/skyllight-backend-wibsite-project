@@ -42,8 +42,8 @@
       <!-- /.card-body -->
 
       <div class="card-footer">
-        <button type="button" onclick="performUpdate({{ $partners_images->id }})" class="btn btn-primary">تعديل</button>
-        <a href="{{ route('partners_images.index') }}" type="button" class="btn btn-secondary">إلغاء</a>
+        <button type="button" onclick="performUpdate({{ $partner_images->id }})" class="btn btn-primary">تعديل</button>
+        <a href="{{ route('partner_images.index') }}" type="button" class="btn btn-secondary">إلغاء</a>
       </div>
     </form>
   </div>
@@ -57,7 +57,7 @@
       let formData = new FormData();
       formData.append('image', document.getElementById('image').files[0]);
 
-      storeRoute('/cms/admin/update-partners_images/'+id , formData);
+      storeRoute('/cms/admin/update-partner_images/'+id , formData);
     }
 
   </script>

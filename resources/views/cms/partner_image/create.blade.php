@@ -39,7 +39,7 @@
 
         <div class="card-footer">
             <button type="button" onclick="performStore()" class="btn btn-primary">حفظ</button>
-            <a href="{{ route('partners_images.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
+            <a href="{{ route('partner_images.index') }}" type="button" class="btn btn-info">العودة للخلف</a>
         </div>
         </form>
         </div>
@@ -53,7 +53,7 @@
             let formData = new FormData();
             formData.append('image', document.getElementById('image').files[0]);
 
-            store('/cms/admin/partners_images', formData)
+            store('/cms/admin/partner_images', formData)
         }
     </script>
 @endsection
