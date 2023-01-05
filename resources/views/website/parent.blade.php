@@ -101,7 +101,7 @@
             <h4 class="text-uppercase mb-4 w-75 m-auto mt-5 mb-4"><img src="{{ asset('website/assets/images/footer/sky-logo-footer.png') }}" alt="logo" class="logo-footer img-fluid" loading="lazy"></h4>
             <div class="d-flex justify-content-center mt-5">
               <div><a class="mx-4" href="#!"><i class="icon bi bi-twitter" style="font-size: 32px;"></i></a></div>
-              <div><a class="mx-4" href="#!"><i class="icon bi bi-youtube" style="font-size: 32px;"></i></a></div>
+              <div><a class="mx-4" href="https://www.youtube.com/@skylights6965/featured" target="_blank"><i class="icon bi bi-youtube" style="font-size: 32px;"></i></a></div>
               <div><a class="mx-4" href="https://www.instagram.com/sky_lights20" target="_blank"><i class="icon bi bi-instagram" style="font-size: 32px;"></i></a></div>
 
             </div>
@@ -136,7 +136,7 @@
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgb(0, 0, 0);">
         © 2023 حقوق النشر محفوظة لدى:
-        <a class="text-white" href="{{ route('cms.parent') }}">Sky-Lights</a>
+        <a class="text-white" href="{{ route('view.login') }}">Sky-Lights</a>
       </div>
       <!-- Copyright -->
     </footer>

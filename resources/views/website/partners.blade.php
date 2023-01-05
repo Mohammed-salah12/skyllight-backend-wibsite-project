@@ -1,3 +1,7 @@
+<?php
+use App\Models\PartnerImage;
+$partner_images = PartnerImage::all();
+?>
 @extends('website.parent')
 
 @section('title','شركاء النجاح')
@@ -30,91 +34,15 @@
     <section class="py-5">
       <div class="container px-3 px-lg-5 mt-5">
           <div class="row gx-md-2 gx-lg-4 row-cols-2 row-cols-md-4 row-cols-xl-6 justify-content-center">
+            @foreach($partner_images as $partner_image)
+              <div class="col mb-4">
+                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
+                      <!-- Product image-->
+                      <img class="img img-fluid" style="object-fit: cover;" src="{{ asset('storage/images/partner_image/'.$partner_image->image) }}" alt="شعار" />
+                  </div>
+              </div>
+              @endforeach
 
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/1.png" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/2.png" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/3.png" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/4.svg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/5.png" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/6.webp" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/7.jpg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/8.jpg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/9.jpg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/10.png" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/11.jpeg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/12.jpeg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/13.jpeg" alt="شعار" />
-                  </div>
-              </div>
-              <div class="col mb-4">
-                  <div class="image-box bg-light w-100 h-100" style="background: inherit !important;">
-                      <!-- Product image-->
-                      <img class="img img-fluid" style="object-fit: cover;" src="assets/images/partners/14.jpeg" alt="شعار" />
-                  </div>
-              </div>
 
 
           </div>

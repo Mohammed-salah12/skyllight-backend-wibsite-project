@@ -26,7 +26,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead >
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>وصف صفحة من نحن</th>
                                     <th>متخصصون في</th>
                                     <th>تعديل</th>
@@ -35,7 +34,6 @@
                             <tbody>
                                 @foreach($abouts as $about)
                                 <tr>
-                                    <td>{{ $about->id }}</td>
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $about->title }}</textarea></td>
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $about->expert_description }}</textarea></td>
                                     <td>

@@ -1,6 +1,10 @@
 <?php
 use App\Models\Principle;
 $principles = Principle::all();
+use App\Models\MainImage;
+$main_images = MainImage::all();
+use App\Models\PartnerImage;
+$partner_images = PartnerImage::all();
 ?>
 
 @extends('website.parent')
@@ -71,41 +75,55 @@ $principles = Principle::all();
     <section class="OurServices">
       <div class="container">
         <div
-          class="cards d-flex justify-content-center align-content-end gap-3 flex-wrap"
+          class="cards d-flex justify-content-center align-content-end gap-3 flex-wrap">
+          <div class="card position-relative rounded-0 border-0" style="width: 220px">
+            <div class="overlay"></div>
+            @foreach ($main_images as $main_image)
+            @if ($main_image->id == 1)
+            <img
+              src="{{ asset('storage/images/main_image/'.$main_image->image)  }}"
+              class="card-img-top img-fluid h-100"
+              alt="خدماتنا"
+            loading="lazy"/>
+            @endif
+            @endforeach
 
-        >
-          <div class="card position-relative rounded-0 border-0" style="width: 220px">
-            <div class="overlay"></div>
-            <img
-              src="assets/images/sections_img/fndqlfyslyqlmyrsltnlkbr.jpg"
-              class="card-img-top img-fluid h-100"
-              alt="خدماتنا"
-            loading="lazy"/>
+
+
+
+
             <div class="body position-absolute">
-              <a href="#" class="card-text"> حفلات عامه + خاصة</a>
+              <a href="{{ route('website.gallery') }}" class="card-text"> حفلات عامه + خاصة</a>
             </div>
           </div>
           <div class="card position-relative rounded-0 border-0" style="width: 220px">
             <div class="overlay"></div>
+            @foreach ($main_images as $main_image)
+            @if ($main_image->id == 2)
             <img
-              src="assets/images/sections_img/Conference-organizing-companies-in-Abu-Dhabi-Body-01-20220621-ar-1024x640.jpg"
+              src="{{ asset('storage/images/main_image/'.$main_image->image)  }}"
               class="card-img-top img-fluid h-100"
               alt="خدماتنا"
             loading="lazy"/>
+            @endif
+            @endforeach
             <div class="body position-absolute">
-              <a href="#" class="card-text"> فعاليات ومؤتمرات</a>
+              <a href="{{ route('website.Services') }}" class="card-text"> فعاليات ومؤتمرات</a>
             </div>
           </div>
           <div class="card position-relative rounded-0 border-0" style="width: 220px">
             <div class="overlay"></div>
+            @foreach ($main_images as $main_image)
+            @if ($main_image->id == 3)
             <img
-              src="assets/images/sections_img/FFXTB0OWUAQl-tr.jpeg"
+              src="{{ asset('storage/images/main_image/'.$main_image->image)  }}"
               class="card-img-top img-fluid h-100"
               alt="خدماتنا"
-            loading="lazy"
-            />
+            loading="lazy"/>
+            @endif
+            @endforeach
             <div class="body position-absolute">
-              <a href="#" class="card-text"> بيع شاشات عملاقة</a>
+              <a href="{{ route('website.gallery') }}" class="card-text"> بيع شاشات عملاقة</a>
             </div>
           </div>
 
@@ -145,20 +163,10 @@ $principles = Principle::all();
 <!-- Carsoul -->
 
 <div class="main-carousel">
-  <div class="cell"><img src="assets/images/partners/1.png" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/3.png" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/5.png" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/7.jpg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/9.jpg" alt="" loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/11.jpeg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/14.jpeg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/2.png" alt="" loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/4.svg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/6.webp" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/8.jpg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/10.png" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/12.jpeg" alt=""loading="lazy"></div>
-  <div class="cell"><img src="assets/images/partners/14.jpeg" alt=""loading="lazy"></div>
+    @foreach($partner_images as $partner_image)
+    <div class="cell"><img src="{{ asset('storage/images/partner_image/'.$partner_image->image) }}" alt=""loading="lazy"></div>
+    @endforeach
+
 </div>
 
     </section>

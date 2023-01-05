@@ -26,7 +26,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>وصف صفحة خدماتنا</th>
                                     <th>تعديل</th>
                                 </tr>
@@ -35,7 +34,6 @@
                                 @foreach($services as $service)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $service->id }}</td>
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $service->title }}</textarea></td>
                                     <td>
                                     <div class="btn group">

@@ -1176,6 +1176,7 @@ header .overlay {
 /*Start Partners*/
 .partners {
   min-height: 30vh;
+  margin-bottom: 30px;
 }
 .partners h2 {
   color: var(--mainColor);

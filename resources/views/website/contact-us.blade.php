@@ -34,18 +34,18 @@
             <div class="widget">
               <div class=" contact ">
                 <h6>رقم الهاتف</h6>
-                <div dir="ltr" class="A phone"><a href=""><i class="fa-solid fa-location-dot"></i> +966553624717</a></div>
+                <div dir="ltr" class="A phone"><a href="tel:+966553624717"><i class="fa-solid fa-location-dot"></i> +966553624717</a></div>
 
               </div>
               <div class="contact">
                 <h6>البريد الالكتروني</h6>
-                <div class="A email"><a href=""><i class="fa-solid fa-location-dot"></i> Skylightsksa@gmail.com</a></div>
+                <div class="A email"><a href="mailto: Skylightsksa@gmail.com"><i class="fa-solid fa-location-dot"></i> Skylightsksa@gmail.com</a></div>
               </div>
               <div class=" contact">
                 <h6>تابعونا</h6>
                 <div class="d-flex justify-content-center mt-3 social">
                   <div><a class="mx-2" href="#!"><i class="bi bi-twitter" style="font-size: 32px;"></i></a></div>
-                  <div><a class="mx-2" href="#!"><i class="bi bi-youtube" style="font-size: 32px;"></i></a></div>
+                  <div><a class="mx-2" href="https://www.youtube.com/@skylights6965/featured" target="_blank"><i class="bi bi-youtube" style="font-size: 32px;"></i></a></div>
                   <div><a class="mx-2" href="https://www.instagram.com/sky_lights20" target="_blank"><i class="icon bi bi-instagram" style="font-size: 32px;"></i></a></div>
                 </div>
               </div>
