@@ -27,13 +27,13 @@
       <div class="card-body">
         <div class="form-group">
           <label for="vision"> ادخل نص رؤيتنا الجديد</label>
-          <textarea class="form-control" name="vision" id="vision" cols="30" rows="10" >{{ $principles->vision }}</textarea>
+          <textarea class="form-control" name="vision" id="vision" cols="25" rows="7" >{{ $principles->vision }}</textarea>
           <label for="message"> ادخل نص رسالتنا الجديد</label>
-          <textarea class="form-control" name="message" id="message" cols="30" rows="10" >{{ $principles->message }}</textarea>
+          <textarea class="form-control" name="message" id="message" cols="25" rows="7" >{{ $principles->message }}</textarea>
           <label for="philosophy"> ادخل نص فلسفتنا الجديد</label>
-          <textarea class="form-control" name="philosophy" id="philosophy" cols="30" rows="10" >{{ $principles->philosophy }}</textarea>
+          <textarea class="form-control" name="philosophy" id="philosophy" cols="25" rows="7" >{{ $principles->philosophy }}</textarea>
           <label for="brief"> ادخل نص نبذة الجديد</label>
-          <textarea class="form-control" name="brief" id="brief" cols="30" rows="10" >{{ $principles->brief }}</textarea>
+          <textarea class="form-control" name="brief" id="brief" cols="25" rows="7" >{{ $principles->brief }}</textarea>
         </div>
 
       </div>
