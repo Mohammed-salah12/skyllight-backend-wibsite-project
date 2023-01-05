@@ -27,7 +27,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>وصف صفحة معرض الاعمال</th>
                                     <th>تعديل</th>
                                 </tr>
@@ -36,7 +35,6 @@
                                 @foreach($galleries as $gallery)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $gallery->id }}</td>
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $gallery->title }}</textarea></td>
                                     <td>
                                     <div class="btn group">

@@ -34,18 +34,18 @@
             <div class="widget">
               <div class=" contact ">
                 <h6>رقم الهاتف</h6>
-                <div dir="ltr" class="A phone"><a href=""><i class="fa-solid fa-location-dot"></i> +966553624717</a></div>
+                <div dir="ltr" class="A phone"><a href="tel:+966553624717"><i class="fa-solid fa-location-dot"></i> +966553624717</a></div>
 
               </div>
               <div class="contact">
                 <h6>البريد الالكتروني</h6>
-                <div class="A email"><a href=""><i class="fa-solid fa-location-dot"></i> Skylightsksa@gmail.com</a></div>
+                <div class="A email"><a href="mailto: Skylightsksa@gmail.com"><i class="fa-solid fa-location-dot"></i> Skylightsksa@gmail.com</a></div>
               </div>
               <div class=" contact">
                 <h6>تابعونا</h6>
                 <div class="d-flex justify-content-center mt-3 social">
                   <div><a class="mx-2" href="#!"><i class="bi bi-twitter" style="font-size: 32px;"></i></a></div>
-                  <div><a class="mx-2" href="#!"><i class="bi bi-youtube" style="font-size: 32px;"></i></a></div>
+                  <div><a class="mx-2" href="https://www.youtube.com/@skylights6965/featured" target="_blank"><i class="bi bi-youtube" style="font-size: 32px;"></i></a></div>
                   <div><a class="mx-2" href="https://www.instagram.com/sky_lights20" target="_blank"><i class="icon bi bi-instagram" style="font-size: 32px;"></i></a></div>
                 </div>
               </div>
@@ -57,22 +57,22 @@
               <h4 class="a C B">رأيك يهمنا</h4>
               <div class="form-group">
                 <label class="text-black" for="name"></label>
-                <input type="text" class="form-control" id="name" placeholder="الاسم">
+                <input type="text" class="form-control one" id="name" placeholder="الاسم">
               </div>
               <div class="form-group">
                 <label class="text-black" for="phone"></label>
-                <input type="text" class="form-control" id="phone" placeholder="رقم الهاتف">
+                <input type="text" class="form-control one" id="phone" placeholder="رقم الهاتف">
               </div>
               <div class="form-group">
                 <label class="text-black" for="email"></label>
-                <input type="email" class="form-control" id="email" placeholder="الايميل">
+                <input type="email" class="form-control one" id="email" placeholder="الايميل">
               </div>
 
               <div class="form-group">
                 <label class="text-black" for="message"></label>
-                <textarea name="message" class="form-control" id="message" cols="30" rows="5" placeholder="الرسالة"></textarea>
+                <textarea name="message" class="form-control one" id="message" cols="30" rows="5" placeholder="الرسالة"></textarea>
               </div>
-              <button type="button" onclick="Store()" class="btn btn-primary mt-5 send" >أرسل رسالة</button>
+              <button type="button"  class="btn btn-primary mt-5 send" >أرسل رسالة</button>
             </form>
           </div>
 
@@ -100,5 +100,16 @@
   }
           </script>
 
+<script>
+    let inputss = document.querySelectorAll(".one");
+    let sendBtn = document.querySelector(".send");
+        sendBtn.onclick = (_) => {.
+            Store();
+        for (let index = 0; index < inputss.length; index++) {
+        inputss[index].value = "";
+        }
 
+};
+
+  </script>
     @endsection

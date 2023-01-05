@@ -27,7 +27,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead >
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>وصف صفحة شركاء النجاح</th>
                                     <th>تعديل</th>
                                 </tr>
@@ -35,7 +34,6 @@
                             <tbody>
                                 @foreach($partners as $partner)
                                 <tr>
-                                    <td>{{ $partner->id }}</td>
                                     <td><textarea class="form-control" cols="30" rows="6" 	readonly >{{ $partner->title }}</textarea></td>
                                     <td>
                                     <div class="btn group">

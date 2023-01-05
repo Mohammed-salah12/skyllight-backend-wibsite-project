@@ -27,7 +27,6 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>رقم المعرف</th>
                                     <th>وصف صفحة تواصل معنا</th>
                                     <th>تعديل</th>
                                 </tr>
@@ -36,7 +35,6 @@
                                 @foreach($contacts as $contact)
                                 {{-- <td><span class="tag tag-success">Approved</span></td> --}}
                                 <tr>
-                                    <td>{{ $contact->id }}</td>
                                     <td>
                                         <textarea class="form-control" cols="30" rows="6" 	readonly >{{ $contact->title }}</textarea>
                                     </td>
