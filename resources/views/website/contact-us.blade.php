@@ -70,7 +70,7 @@
 
               <div class="form-group">
                 <label class="text-black" for="message"></label>
-                <textarea name="message" class="form-control one" id="message" cols="30" rows="5" placeholder="الرسالة"></textarea>
+                <textarea name="message" class="form-control one" id="message" cols="30" rows="10" placeholder="الرسالة"></textarea>
               </div>
               <button type="button"  class="btn btn-primary mt-5 send" >أرسل رسالة</button>
             </form>

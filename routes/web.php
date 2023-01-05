@@ -35,7 +35,7 @@ Route::get('/', function () {
 
 
 
-    Route::prefix('cms/admin/')->group(function(){
+        Route::prefix('cms/admin/')->middleware('auth:user')->group(function(){
         Route::view('' , 'cms.parent')->name('cms.parent');
         Route::view('temp' , 'cms.temp');
 

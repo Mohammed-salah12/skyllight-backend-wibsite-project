@@ -42,16 +42,11 @@ $service_descriptions = Service_description::all();
           </div>
         <!-- carousel -->
         <div class="main-carousel">
-          <div class="cell"><img src="assets/images/sections_img/section 1.png" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/section.png" alt=""></div>
-          <div class="cell"><img src="assets/images/backgrounds/2.jpg" alt=""></div>
-          <div class="cell"><img src="assets/images/backgrounds/1.jpg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/Conference-organizing-companies-in-Abu-Dhabi-Body-01-20220621-ar-1024x640.jpg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/95046-1937118527.jpg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/FFXTB0OWUAQl-tr.jpeg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/WhatsApp Image 2022-12-21 at 9.11.24 PM.jpeg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/fndqlfyslyqlmyrsltnlkbr.jpg" alt=""></div>
-          <div class="cell"><img src="assets/images/sections_img/3439094912842421034.jpg" alt=""></div>
+            @foreach ( as )
+            <div class="cell"><img src="assets/images/sections_img/section 1.png" alt=""></div>
+            @endforeach
+
+
         </div>
 
 
