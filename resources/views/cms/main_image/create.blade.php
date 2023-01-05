@@ -55,5 +55,8 @@
 
             store('/cms/admin/main_images', formData)
         }
+
+
+
     </script>
 @endsection

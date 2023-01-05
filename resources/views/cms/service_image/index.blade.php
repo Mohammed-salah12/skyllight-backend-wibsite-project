@@ -26,7 +26,7 @@
                         <div class="card-tools">
 
 
-                              
+
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,9 @@
                                           <a href="{{ route('service_images.edit' , $service_image->id ) }}" type="button" class="btn btn-info">
                                             <i class="fas fa-edit"> </i>
                                          </a>
-
+                                         <button type="button" class="btn btn-danger" onclick="performDestroy({{ $service_image->id }} , this)">
+                                            <i class="fas fa-trash"></i>
+                                          </button>
                                           </div>
                                       </td>
 
