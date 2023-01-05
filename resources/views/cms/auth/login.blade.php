@@ -17,11 +17,16 @@
   <link rel="stylesheet" href="{{ asset('cms/plugins/toastr/toastr.min.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
+  <!-- Library Fontawesme -->
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css" />
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="#"><b>موقع أضواء السماء</b></a>
+  <div class=" text-center mb-3 fs-5">
+   <h3>
+    <a href="{{ route('website.index') }}" class="text-dark"><b>موقع أضواء السماء</b></a>
+   </h3>
+   <a  href="{{ route('website.index') }}" class="btn btn-dark " >العودة للموقع</a>
   </div>
   <!-- /.login-logo -->
   <div class="card rounded" >
