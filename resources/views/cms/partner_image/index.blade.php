@@ -20,8 +20,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">عرض صور أعمال الشركاء</h3>
+                    <div class="card-header bg-info">
+                        <h3 class=" ">عرض صور أعمال الشركاء</h3>
                         {{-- <a href="{{ route('partner_images.create') }}" type="button" class="btn btn-info">إضافة صورة جديدة</a> --}}
                         <div class="card-tools">
 
